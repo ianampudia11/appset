@@ -1,0 +1,1 @@
+import{b6 as s,u as a,r as n,j as r,b7 as e}from"./index-FCxNLw1C.js";function i(){const{user:i,isLoading:u}=s(),[d,o]=a();return n.useEffect(()=>{u||(i&&i.isSuperAdmin?o("/admin/dashboard"):i&&o("/"))},[i,u,o]),u||!i?r.jsx(e,{}):null}export{i as default};

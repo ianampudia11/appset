@@ -1,0 +1,70 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16
+    container_name: powerchat-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: powerchat
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # iAwarrior Tech Sac Application (Backend + Frontend)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: powerchat-app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=production
+      - PORT=9000
+      - DATABASE_URL=postgresql://postgres:root@postgres:5432/powerchat
+      - PGSSLMODE=disable
+      - SESSION_SECRET=powerchat-docker-secret
+      - FORCE_INSECURE_COOKIE=true
+      - ADMIN_EMAIL=admin@example.com
+      - ADMIN_PASSWORD=12345678
+      - BASE_URL=${BASE_URL:-http://localhost:9000}
+      - DOCKER_CONTAINER=true
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./whatsapp-sessions:/app/whatsapp-sessions
+      - ./data:/app/data
+      - ./migrations:/app/migrations
+      # Auto-update volumes
+      - powerchat_updates:/app/volumes/updates
+      - powerchat_backups:/app/volumes/backups
+      - powerchat_app_updates:/app/volumes/app-updates
+      - powerchat_restart_signals:/app/volumes
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    sysctls:
+      net.ipv4.tcp_keepalive_time: 60
+    deploy:
+      resources:
+        reservations:
+          cpus: "1.0"
+          memory: 512m
+    restart: unless-stopped
+
+volumes:
+  postgres_data: # Auto-update persistent volumes
+
+  powerchat_updates:
+  powerchat_backups:
+  powerchat_app_updates:
+  powerchat_restart_signals:

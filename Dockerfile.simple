@@ -1,0 +1,38 @@
+# PowerChat Plus - Production Docker Image (Node.js 20.19.1)
+FROM node:20.19.1-slim
+
+WORKDIR /app
+
+# Install PostgreSQL 16 client tools and git (required for npm packages that use git)
+RUN apt-get update && apt-get install -y curl gnupg git && \
+    echo "deb http://apt.postgresql.org/pub/repos/apt/ bookworm-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
+    curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+    apt-get update && apt-get install -y postgresql-client-16 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Default environment variables
+ENV PGUSER=postgres
+ENV PGPASSWORD=root
+ENV PGHOST=postgres
+ENV PGDATABASE=powerchat
+ENV APP_PORT=9000
+
+# Copy and install dependencies
+COPY package*.json ./
+# Use npm install instead of npm ci since package-lock.json may not exist
+# npm install works with or without package-lock.json
+RUN npm install --omit=dev --include=optional
+
+# Copy app files
+COPY dist/ ./dist/
+COPY migrations/ ./migrations/
+
+# Create directories
+RUN mkdir -p /app/data/uploads /app/data/whatsapp-sessions /app/data/backups /app/volumes/backups /app/temp/backups
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+  CMD curl -f http://localhost:9000/ || exit 1
+
+EXPOSE 9000
+CMD ["node", "dist/index.js"]

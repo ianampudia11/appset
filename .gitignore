@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+uploads
+whatsapp-sessions
+*.tar.gz
+*.zip
+backups
+media
+data/wa-version.json
+.env
+.env.*
+cookies.txt

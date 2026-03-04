@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iAwarrior Tech Sac WebChat Widget</title>
+  <style>
+    :root { --pc-primary: #6366f1; --pc-bg:#fff; --pc-muted:#f8fafc; --pc-text:#111827; }
+    html,body{margin:0;padding:0}
+    .pc-container{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; font-size:14px; color:var(--pc-text)}
+    .pc-widget{position:fixed; right:20px; bottom:20px; z-index:2147483000}
+    .pc-button{background:var(--pc-primary); color:#fff; border:none; border-radius:9999px; padding:12px 16px; cursor:pointer; box-shadow:0 6px 20px rgba(0,0,0,.15)}
+    .pc-window{position:fixed; right:20px; bottom:76px; width:340px; max-width:95vw; height:480px; max-height:75vh; background:#fff; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.2); display:none; overflow:hidden}
+    .pc-header{background:var(--pc-primary); color:#fff; padding:10px 12px; font-weight:600; display:flex; align-items:center; justify-content:space-between}
+    .pc-header small{opacity:.85; font-weight:500}
+    .pc-body{display:flex; flex-direction:column; height:calc(100% - 44px); background:var(--pc-muted)}
+    .pc-messages{flex:1; overflow:auto; padding:10px}
+    .pc-input{display:flex; gap:6px; padding:8px; background:#fff; border-top:1px solid #e5e7eb}
+    .pc-input input{flex:1; border:1px solid #e5e7eb; border-radius:8px; padding:8px}
+    .pc-msg{max-width:80%; margin:6px 0; padding:8px 10px; border-radius:10px; white-space:pre-wrap}
+    .pc-in{background:#fff; border:1px solid #e5e7eb}
+    .pc-out{background:#eef2ff; margin-left:auto}
+  </style>
+</head>
+<body>
+  <div class="pc-container">
+    <div class="pc-widget">
+      <button id="pc-btn" class="pc-button">Chat</button>
+    </div>
+    <div id="pc-win" class="pc-window">
+      <div class="pc-header"><span id="pc-title">Support</span><small id="pc-close" style="cursor:pointer">✕</small></div>
+      <div class="pc-body">
+        <div id="pc-msgs" class="pc-messages"></div>
+        <div class="pc-input">
+          <input id="pc-inp" placeholder="Type a message" />
+          <button id="pc-send">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      const C = window.WEBCHAT_CONFIG || {}; const api = C.apiUrl || (location.origin);
+      document.documentElement.style.setProperty('--pc-primary', C.widgetColor || '#6366f1');
+      const btn = document.getElementById('pc-btn');
+      const win = document.getElementById('pc-win');
+      const msgs = document.getElementById('pc-msgs');
+      const inp = document.getElementById('pc-inp');
+      const send = document.getElementById('pc-send');
+      const close = document.getElementById('pc-close');
+      const title = document.getElementById('pc-title');
+      if (C.companyName) title.textContent = C.companyName;
+      const sidKey = 'pc_webchat_sid_'+(C.token||'');
+      let sid = localStorage.getItem(sidKey);
+      function push(type, text){ const div = document.createElement('div'); div.className = 'pc-msg '+(type==='out'?'pc-out':'pc-in'); div.textContent = text; msgs.appendChild(div); msgs.scrollTop = msgs.scrollHeight; }
+      async function ensureSession(){ if(!sid){ const r = await fetch(api+'/api/webchat/session',{ method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ token: C.token }) }); const j = await r.json(); sid = j.sessionId; localStorage.setItem(sidKey, sid);} }
+      btn.onclick = async()=>{ win.style.display = win.style.display==='flex'?'none':'flex'; if (win.style.display==='flex'){ await ensureSession(); if (C.welcomeMessage) push('in', C.welcomeMessage); } };
+      close.onclick = ()=> win.style.display='none';
+      send.onclick = async()=>{ const v = inp.value.trim(); if(!v) return; push('out', v); inp.value=''; await ensureSession(); fetch(api+'/api/webchat/message',{ method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ token: C.token, sessionId: sid, message: v, messageType:'text' }) }).catch(()=>{}); };
+    })();
+  </script>
+</body>
+</html>
