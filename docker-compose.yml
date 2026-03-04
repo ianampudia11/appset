@@ -2,13 +2,10 @@ services:
   # PostgreSQL Database
   postgres:
     image: postgres:16
-    container_name: powerchat-postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-root}
       POSTGRES_DB: powerchat
-    ports:
-      - "5435:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -22,7 +19,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: powerchat-app
     depends_on:
       postgres:
         condition: service_healthy
@@ -37,8 +33,6 @@ services:
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-changeme123}
       - BASE_URL=${BASE_URL:-https://ato.ianampudia.com}
       - DOCKER_CONTAINER=true
-    ports:
-      - "9000:9000"
     volumes:
       - ./uploads:/app/uploads
       - ./whatsapp-sessions:/app/whatsapp-sessions
