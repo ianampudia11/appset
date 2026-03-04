@@ -59,13 +59,7 @@ RUN find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exe
 # Create directories for instance-specific data
 RUN mkdir -p /app/data/uploads /app/data/whatsapp-sessions /app/data/backups /app/volumes/backups /app/temp/backups
 
-# Create dummy license files in all expected paths to bypass license check
-RUN echo "LICENSED" > /app/dist/license && \
-    echo "LICENSED" > /app/dist/.license && \
-    echo "LICENSED" > /app/license && \
-    echo "LICENSED" > /app/.license && \
-    echo "LICENSED" > /dist/license && \
-    echo "LICENSED" > /dist/.license || true
+# License check is disabled via SKIP_LICENSE_CHECK=true env var (set in docker-compose)
 
 # Expose configurable port
 EXPOSE $APP_PORT
