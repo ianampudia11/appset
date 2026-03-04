@@ -531,7 +531,6 @@
         "key": "settings.whatsappEmbeddedSignup.note",
         "value": "Nota:"
     },
-
     {
         "key": "trial.status_title",
         "value": "Período de prueba"
@@ -774,7 +773,7 @@
     },
     {
         "key": "common.search_placeholder",
-        "value": "Buscar conversaciones, contactos, plantillas..."
+        "value": "Buscar conversaciones, plantillas..."
     },
     {
         "key": "search.no_results",
@@ -1550,7 +1549,7 @@
     },
     {
         "key": "flow_builder.webhook_test_tooltip",
-        "value": "Prueba el webhook con la configuración actual"
+        "value": "Enviar una solicitud webhook de prueba para verificar configuración, filtros y mapeo de contactos antes de usar en producción."
     },
     {
         "key": "flow_builder.webhook_authentication",
@@ -1675,6 +1674,130 @@
     {
         "key": "flow_builder.webhook_sync_tooltip",
         "value": "Espera a que el flujo termine (máx. 30 s) antes de responder. Use cuando el sistema externo requiera confirmación inmediata (ej. pasarelas de pago, webhooks de validación)."
+    },
+    {
+        "key": "flow_builder.contact_notification",
+        "value": "Notificación de Contacto"
+    },
+    {
+        "key": "flow_builder.contact_notification_desc",
+        "value": "Enviar mensaje a un contacto específico"
+    },
+    {
+        "key": "flow_builder.phone_number",
+        "value": "Número de Teléfono"
+    },
+    {
+        "key": "flow_builder.phone_number_placeholder",
+        "value": "Sin número de teléfono"
+    },
+    {
+        "key": "flow_builder.phone_number_required",
+        "value": "Por favor ingrese un número de teléfono"
+    },
+    {
+        "key": "flow_builder.channel_type",
+        "value": "Tipo de Canal"
+    },
+    {
+        "key": "flow_builder.select_channel",
+        "value": "Seleccionar canal"
+    },
+    {
+        "key": "flow_builder.message_type",
+        "value": "Tipo de Mensaje"
+    },
+    {
+        "key": "flow_builder.message_content",
+        "value": "Contenido del Mensaje"
+    },
+    {
+        "key": "flow_builder.message_placeholder",
+        "value": "Escribe tu mensaje..."
+    },
+    {
+        "key": "flow_builder.message_configured",
+        "value": "Mensaje configurado"
+    },
+    {
+        "key": "flow_builder.media_url",
+        "value": "URL de Multimedia"
+    },
+    {
+        "key": "flow_builder.media_url_placeholder",
+        "value": "https://ejemplo.com/imagen.jpg"
+    },
+    {
+        "key": "flow_builder.media_not_supported",
+        "value": "Los mensajes multimedia no son compatibles con este tipo de canal"
+    },
+    {
+        "key": "flow_builder.caption",
+        "value": "Descripción"
+    },
+    {
+        "key": "flow_builder.caption_placeholder",
+        "value": "Descripción opcional..."
+    },
+    {
+        "key": "flow_builder.email_subject",
+        "value": "Asunto del Correo"
+    },
+    {
+        "key": "flow_builder.email_subject_placeholder",
+        "value": "Línea de asunto"
+    },
+    {
+        "key": "flow_builder.test_notification",
+        "value": "Probar Notificación"
+    },
+    {
+        "key": "flow_builder.notification_sent",
+        "value": "Notificación enviada con éxito"
+    },
+    {
+        "key": "flow_builder.notification_failed",
+        "value": "Error al enviar la notificación"
+    },
+    {
+        "key": "flow_builder.advanced_options",
+        "value": "Opciones Avanzadas"
+    },
+    {
+        "key": "flow_builder.timeout_seconds",
+        "value": "Tiempo de espera (segundos)"
+    },
+    {
+        "key": "flow_builder.error_handling",
+        "value": "Manejo de Errores"
+    },
+    {
+        "key": "flow_builder.continue_on_error",
+        "value": "Continuar en caso de error"
+    },
+    {
+        "key": "flow_builder.stop_on_error",
+        "value": "Detener en caso de error"
+    },
+    {
+        "key": "flow_builder.retry_attempts",
+        "value": "Intentos de reintento"
+    },
+    {
+        "key": "flow_builder.contact_notification_help",
+        "value": "El nodo de notificación de contacto envía un mensaje a un contacto específico por número de teléfono cuando se alcanza en el flujo y continúa inmediatamente al siguiente nodo."
+    },
+    {
+        "key": "flow_builder.auto_channel",
+        "value": "Auto (desde la conversación)"
+    },
+    {
+        "key": "flow_builder.auto_channel_info",
+        "value": "El tipo de canal se determina automáticamente desde el Disparador de Mensajes. La notificación usará el mismo canal que el mensaje entrante."
+    },
+    {
+        "key": "flow_builder.variable_syntax_help",
+        "value": "Use la sintaxis {{variable}} para valores dinámicos"
     },
     {
         "key": "flow_builder.calendar_event",
@@ -3182,7 +3305,7 @@
     },
     {
         "key": "contacts.add.phone_placeholder",
-        "value": "Introduce el número de teléfono"
+        "value": "+1234567890"
     },
     {
         "key": "contacts.add.company_label",
@@ -3226,11 +3349,11 @@
     },
     {
         "key": "contacts.add.tags_label",
-        "value": "Etiquetas (separadas por comas)"
+        "value": "Etiquetas"
     },
     {
         "key": "contacts.add.tags_placeholder",
-        "value": "cliente potencial, cliente, etc."
+        "value": "Escribe etiquetas separadas por comas..."
     },
     {
         "key": "contacts.add.notes_label",
@@ -3286,7 +3409,7 @@
     },
     {
         "key": "contacts.import.preview_label",
-        "value": "Vista previa (primeras 5 filas)"
+        "value": "Vista Previa (primeras 5 filas)"
     },
     {
         "key": "contacts.import.duplicate_handling_label",
@@ -3618,7 +3741,7 @@
     },
     {
         "key": "pipeline.select_stage",
-        "value": "Seleccionar una etapa"
+        "value": "Seleccionar etapa"
     },
     {
         "key": "pipeline.select_target_stage_warning",
@@ -3982,7 +4105,7 @@
     },
     {
         "key": "pipeline.invalid_file_type",
-        "value": "Tipo de archivo inválido"
+        "value": "Por favor sube un archivo CSV, Excel o JSON"
     },
     {
         "key": "pipeline.please_select_image_file",
@@ -4635,14 +4758,6 @@
     {
         "key": "pipeline.custom_fields",
         "value": "Campos Personalizados"
-    },
-    {
-        "key": "pipeline.contact_custom_fields",
-        "value": "Campos Personalizados del Contacto"
-    },
-    {
-        "key": "pipeline.deal_custom_fields",
-        "value": "Campos Personalizados de la Oportunidad"
     },
     {
         "key": "pipeline.all_pipelines",
@@ -7401,6 +7516,10 @@
         "value": "No hay contactos que coincidan con los criterios actuales"
     },
     {
+        "key": "segments.create.try_adjusting_filters",
+        "value": "Intente ajustar sus filtros"
+    },
+    {
         "key": "segments.create.add_filter_criteria",
         "value": "Agrega criterios de filtro para previsualizar contactos"
     },
@@ -7458,11 +7577,11 @@
     },
     {
         "key": "segments.add_to_existing.title",
-        "value": "Agregar a Segmento Existente"
+        "value": "Agregar Contactos a Segmento Existente"
     },
     {
         "key": "segments.add_to_existing.button",
-        "value": "Agregar al Segmento"
+        "value": "Agregar a Segmento"
     },
     {
         "key": "segments.add_to_existing.select_label",
@@ -7470,19 +7589,19 @@
     },
     {
         "key": "segments.add_to_existing.select_placeholder",
-        "value": "Elige un segmento..."
+        "value": "Elegir un segmento..."
     },
     {
         "key": "segments.add_to_existing.selected_count",
-        "value": "{{count}} contacto(s) seleccionado(s)"
+        "value": "{{count}} contactos serán agregados"
     },
     {
         "key": "segments.add_to_existing.no_segments",
-        "value": "No hay segmentos manuales disponibles. Crea un segmento primero."
+        "value": "No hay segmentos manuales disponibles. Crea uno primero."
     },
     {
         "key": "segments.add_to_existing.success",
-        "value": "Se agregaron {{count}} contacto(s) al segmento \"{{name}}\""
+        "value": "Se agregaron {{count}} contactos exitosamente al segmento \"{{name}}\""
     },
     {
         "key": "segments.add_to_existing.error",
@@ -8046,7 +8165,7 @@
     },
     {
         "key": "contacts.edit.update_failed",
-        "value": "Error al actualizar contacto"
+        "value": "Fallo al actualizar contacto"
     },
     {
         "key": "contacts.edit.success_title",
@@ -8322,7 +8441,7 @@
     },
     {
         "key": "messages.input.recording_error",
-        "value": "Error de Grabación"
+        "value": "Error al acceder al micrófono"
     },
     {
         "key": "messages.input.no_recording",
@@ -8461,6 +8580,22 @@
         "value": "📄 Documento"
     },
     {
+        "key": "conversations.item.poll",
+        "value": "📊 Encuesta"
+    },
+    {
+        "key": "conversations.item.sent_poll",
+        "value": "📊 Envió una encuesta"
+    },
+    {
+        "key": "conversations.item.voted_poll",
+        "value": "✅ Votaste"
+    },
+    {
+        "key": "conversations.item.vote_received",
+        "value": "✅ Votó"
+    },
+    {
         "key": "conversations.item.conversation_with",
         "value": "Conversación con"
     },
@@ -8515,6 +8650,38 @@
     {
         "key": "conversations.item.waiting",
         "value": "Esperando"
+    },
+    {
+        "key": "conversations.item.me_prefix",
+        "value": "Yo"
+    },
+    {
+        "key": "poll.title",
+        "value": "Encuesta"
+    },
+    {
+        "key": "poll.total_votes",
+        "value": "{{count}} voto"
+    },
+    {
+        "key": "poll.view_votes",
+        "value": "Ver votos"
+    },
+    {
+        "key": "poll.hide_votes",
+        "value": "Ocultar votos"
+    },
+    {
+        "key": "poll.loading_votes",
+        "value": "Cargando..."
+    },
+    {
+        "key": "poll.you_voted",
+        "value": "Votaste"
+    },
+    {
+        "key": "poll.voted",
+        "value": "Votó"
     },
     {
         "key": "conversations.view.channel.whatsapp",
@@ -9629,6 +9796,50 @@
         "value": "Ir a Bandeja de Entrada"
     },
     {
+        "key": "payment.mpesa.title",
+        "value": "Pago MPESA"
+    },
+    {
+        "key": "payment.mpesa.phone_number",
+        "value": "Número de Teléfono"
+    },
+    {
+        "key": "payment.mpesa.phone_placeholder",
+        "value": "254XXXXXXXXX"
+    },
+    {
+        "key": "payment.mpesa.phone_help",
+        "value": "Ingrese su número de teléfono keniano en el formato 254XXXXXXXXX"
+    },
+    {
+        "key": "payment.mpesa.stk_push_sent",
+        "value": "STK Push Enviado"
+    },
+    {
+        "key": "payment.mpesa.check_phone",
+        "value": "Revisa tu teléfono para la solicitud de pago MPESA"
+    },
+    {
+        "key": "payment.mpesa.enter_pin",
+        "value": "Ingresa tu PIN MPESA para completar el pago"
+    },
+    {
+        "key": "payment.mpesa.auto_activate",
+        "value": "Tu suscripción se activará automáticamente una vez confirmado el pago"
+    },
+    {
+        "key": "payment.mpesa.completed_payment",
+        "value": "Completé el Pago"
+    },
+    {
+        "key": "payment.mpesa.invalid_phone",
+        "value": "Formato de número de teléfono inválido. Use el formato: 254XXXXXXXXX"
+    },
+    {
+        "key": "payment.mpesa.phone_required",
+        "value": "El número de teléfono es obligatorio para el pago MPESA"
+    },
+    {
         "key": "subdomain.company_not_found",
         "value": "Empresa No Encontrada"
     },
@@ -9875,6 +10086,1242 @@
     {
         "key": "admin.translations.select_language_file",
         "value": "Por favor, selecciona un idioma y un archivo"
+    },
+    {
+        "key": "admin.translations.import_failed",
+        "value": "Fallo al importar traducciones"
+    },
+    {
+        "key": "admin.translations.translations_imported",
+        "value": "Traducciones importadas"
+    },
+    {
+        "key": "admin.translations.translations_imported_desc",
+        "value": "Las traducciones se han importado correctamente."
+    },
+    {
+        "key": "admin.translations.language_label",
+        "value": "Idioma"
+    },
+    {
+        "key": "admin.translations.select_language",
+        "value": "Seleccionar idioma"
+    },
+    {
+        "key": "admin.translations.file_label",
+        "value": "Archivo"
+    },
+    {
+        "key": "admin.translations.importing",
+        "value": "Importando..."
+    },
+    {
+        "key": "email.validation_error",
+        "value": "Error de Validación"
+    },
+    {
+        "key": "email.fill_required_fields",
+        "value": "Por favor complete todos los campos obligatorios"
+    },
+    {
+        "key": "email.provide_passwords_oauth",
+        "value": "Por favor proporcione contraseñas o configure OAuth2"
+    },
+    {
+        "key": "email.connection_test_successful",
+        "value": "Prueba de Conexión Exitosa"
+    },
+    {
+        "key": "email.credentials_valid",
+        "value": "Las credenciales del servidor de correo son válidas"
+    },
+    {
+        "key": "email.connection_test_failed",
+        "value": "Prueba de Conexión Fallida"
+    },
+    {
+        "key": "email.failed_connect_server",
+        "value": "Error al conectarse al servidor de correo"
+    },
+    {
+        "key": "email.connection_test_error",
+        "value": "Error en la Prueba de Conexión"
+    },
+    {
+        "key": "email.failed_test_connection",
+        "value": "Error al probar la conexión de correo"
+    },
+    {
+        "key": "email.create_connection_failed",
+        "value": "Error al crear la conexión del canal de correo"
+    },
+    {
+        "key": "email.configure_settings_failed",
+        "value": "Error al configurar los ajustes de correo"
+    },
+    {
+        "key": "email.channel_connected_success",
+        "value": "¡Canal de correo conectado y sondeo iniciado con éxito!"
+    },
+    {
+        "key": "email.configuration_successful",
+        "value": "Configuración Exitosa"
+    },
+    {
+        "key": "email.configured_connection_failed",
+        "value": "Canal de correo configurado pero la conexión falló: {{error}}. Puede intentar conectarse manualmente desde Configuración."
+    },
+    {
+        "key": "email.connection_error",
+        "value": "Error de Conexión"
+    },
+    {
+        "key": "email.failed_create_connection",
+        "value": "Error al crear la conexión de correo"
+    },
+    {
+        "key": "email.connect_email_channel",
+        "value": "Conectar Canal de Correo"
+    },
+    {
+        "key": "email.basic_configuration",
+        "value": "Configuración Básica"
+    },
+    {
+        "key": "email.connection_name",
+        "value": "Nombre de la Conexión"
+    },
+    {
+        "key": "email.connection_name_placeholder",
+        "value": "Mi Soporte de Correo"
+    },
+    {
+        "key": "email.connection_name_help",
+        "value": "Un nombre descriptivo para esta conexión de correo"
+    },
+    {
+        "key": "email.email_address",
+        "value": "Dirección de Correo"
+    },
+    {
+        "key": "email.email_address_placeholder",
+        "value": "soporte@empresa.com"
+    },
+    {
+        "key": "email.email_address_help",
+        "value": "La dirección de correo para enviar y recibir mensajes"
+    },
+    {
+        "key": "email.imap_settings",
+        "value": "Configuración IMAP (Recepción)"
+    },
+    {
+        "key": "email.imap_host",
+        "value": "Host IMAP"
+    },
+    {
+        "key": "email.imap_host_placeholder",
+        "value": "imap.gmail.com"
+    },
+    {
+        "key": "email.imap_port",
+        "value": "Puerto IMAP"
+    },
+    {
+        "key": "email.use_ssl_tls_imap",
+        "value": "Usar SSL/TLS para IMAP"
+    },
+    {
+        "key": "email.imap_username",
+        "value": "Usuario IMAP (opcional)"
+    },
+    {
+        "key": "email.imap_username_placeholder",
+        "value": "Dejar vacío para usar la dirección de correo"
+    },
+    {
+        "key": "email.imap_password",
+        "value": "Contraseña IMAP"
+    },
+    {
+        "key": "email.password_placeholder",
+        "value": "Tu contraseña de correo o contraseña de aplicación"
+    },
+    {
+        "key": "email.smtp_settings",
+        "value": "Configuración SMTP (Envío)"
+    },
+    {
+        "key": "email.smtp_host",
+        "value": "Host SMTP"
+    },
+    {
+        "key": "email.smtp_host_placeholder",
+        "value": "smtp.gmail.com"
+    },
+    {
+        "key": "email.smtp_port",
+        "value": "Puerto SMTP"
+    },
+    {
+        "key": "email.use_ssl_tls_smtp",
+        "value": "Usar SSL/TLS para SMTP"
+    },
+    {
+        "key": "email.smtp_username",
+        "value": "Usuario SMTP (opcional)"
+    },
+    {
+        "key": "email.smtp_username_placeholder",
+        "value": "Dejar vacío para usar la dirección de correo"
+    },
+    {
+        "key": "email.smtp_password",
+        "value": "Contraseña SMTP"
+    },
+    {
+        "key": "email.advanced_settings",
+        "value": "Configuración Avanzada"
+    },
+    {
+        "key": "email.sync_folder",
+        "value": "Carpeta de Sincronización"
+    },
+    {
+        "key": "email.sync_folder_placeholder",
+        "value": "INBOX"
+    },
+    {
+        "key": "email.sync_folder_help",
+        "value": "Carpeta de correo a monitorear para nuevos mensajes"
+    },
+    {
+        "key": "email.max_sync_messages",
+        "value": "Máximo de Mensajes a Sincronizar"
+    },
+    {
+        "key": "email.max_sync_messages_help",
+        "value": "Número máximo de mensajes a sincronizar por verificación"
+    },
+    {
+        "key": "messenger.title",
+        "value": "Messenger"
+    },
+    {
+        "key": "messenger.conversations",
+        "value": "Conversaciones"
+    },
+    {
+        "key": "messenger.compose",
+        "value": "Redactar Mensaje"
+    },
+    {
+        "key": "messenger.folders.all",
+        "value": "Todas las Conversaciones"
+    },
+    {
+        "key": "messenger.folders.unread",
+        "value": "No leídas"
+    },
+    {
+        "key": "messenger.folders.starred",
+        "value": "Destacadas"
+    },
+    {
+        "key": "messenger.folders.archived",
+        "value": "Archivadas"
+    },
+    {
+        "key": "messenger.quick_actions",
+        "value": "Acciones Rápidas"
+    },
+    {
+        "key": "messenger.settings",
+        "value": "Configuración"
+    },
+    {
+        "key": "messenger.last_sync",
+        "value": "Última sincronización"
+    },
+    {
+        "key": "messenger.status.connected",
+        "value": "Conectado"
+    },
+    {
+        "key": "messenger.status.disconnected",
+        "value": "Desconectado"
+    },
+    {
+        "key": "messenger.status.connecting",
+        "value": "Conectando"
+    },
+    {
+        "key": "messenger.status.error",
+        "value": "Error"
+    },
+    {
+        "key": "messenger.no_channel",
+        "value": "Ningún Canal Seleccionado"
+    },
+    {
+        "key": "messenger.select_channel",
+        "value": "Por favor seleccione un canal de Messenger para continuar"
+    },
+    {
+        "key": "messenger.search_conversations",
+        "value": "Buscar conversaciones..."
+    },
+    {
+        "key": "messenger.no_conversations",
+        "value": "Sin Conversaciones"
+    },
+    {
+        "key": "messenger.no_conversations_desc",
+        "value": "Inicia una conversación para verla aquí"
+    },
+    {
+        "key": "messenger.end_of_conversations",
+        "value": "Has llegado al final de tus conversaciones"
+    },
+    {
+        "key": "messenger.loading_messages",
+        "value": "Cargando mensajes..."
+    },
+    {
+        "key": "messenger.select_conversation",
+        "value": "Selecciona una Conversación"
+    },
+    {
+        "key": "messenger.choose_conversation",
+        "value": "Elige una conversación de la lista para comenzar a enviar mensajes"
+    },
+    {
+        "key": "messenger.online",
+        "value": "En línea"
+    },
+    {
+        "key": "messenger.offline",
+        "value": "Desconectado"
+    },
+    {
+        "key": "messenger.last_seen",
+        "value": "Visto por última vez {{time}}"
+    },
+    {
+        "key": "messenger.view_profile",
+        "value": "Ver Perfil"
+    },
+    {
+        "key": "messenger.mute_conversation",
+        "value": "Silenciar Conversación"
+    },
+    {
+        "key": "messenger.block_contact",
+        "value": "Bloquear Contacto"
+    },
+    {
+        "key": "messenger.type_message",
+        "value": "Escribe un mensaje..."
+    },
+    {
+        "key": "messenger.sent",
+        "value": "Mensaje Enviado"
+    },
+    {
+        "key": "messenger.message_sent_successfully",
+        "value": "Tu mensaje ha sido enviado con éxito"
+    },
+    {
+        "key": "messenger.error",
+        "value": "Error"
+    },
+    {
+        "key": "messenger.recipient_required",
+        "value": "El destinatario es obligatorio"
+    },
+    {
+        "key": "messenger.message_required",
+        "value": "El contenido del mensaje es obligatorio"
+    },
+    {
+        "key": "messenger.send_error",
+        "value": "Error de Envío"
+    },
+    {
+        "key": "messenger.send_failed",
+        "value": "Error al enviar el mensaje"
+    },
+    {
+        "key": "messenger.recipient",
+        "value": "Destinatario"
+    },
+    {
+        "key": "messenger.enter_recipient",
+        "value": "Ingresa el ID o número de teléfono del destinatario"
+    },
+    {
+        "key": "messenger.message",
+        "value": "Mensaje"
+    },
+    {
+        "key": "messenger.enter_message",
+        "value": "Escribe tu mensaje..."
+    },
+    {
+        "key": "messenger.text_message",
+        "value": "Mensaje de Texto"
+    },
+    {
+        "key": "messenger.quick_reply",
+        "value": "Respuesta Rápida"
+    },
+    {
+        "key": "messenger.button_template",
+        "value": "Plantilla con Botones"
+    },
+    {
+        "key": "messenger.quick_replies",
+        "value": "Respuestas Rápidas"
+    },
+    {
+        "key": "messenger.add_quick_reply",
+        "value": "Agregar Respuesta Rápida"
+    },
+    {
+        "key": "messenger.quick_reply_title",
+        "value": "Título de respuesta rápida"
+    },
+    {
+        "key": "messenger.quick_reply_payload",
+        "value": "Carga útil"
+    },
+    {
+        "key": "messenger.template_text",
+        "value": "Texto de Plantilla"
+    },
+    {
+        "key": "messenger.enter_template_text",
+        "value": "Ingresa el texto de la plantilla..."
+    },
+    {
+        "key": "messenger.buttons",
+        "value": "Botones"
+    },
+    {
+        "key": "messenger.add_button",
+        "value": "Agregar Botón"
+    },
+    {
+        "key": "messenger.postback",
+        "value": "Postback"
+    },
+    {
+        "key": "messenger.web_url",
+        "value": "URL Web"
+    },
+    {
+        "key": "messenger.button_title",
+        "value": "Título del botón"
+    },
+    {
+        "key": "messenger.payload",
+        "value": "Carga útil"
+    },
+    {
+        "key": "messenger.url",
+        "value": "URL"
+    },
+    {
+        "key": "messenger.attachments",
+        "value": "Archivos adjuntos"
+    },
+    {
+        "key": "messenger.attach_file",
+        "value": "Adjuntar Archivo"
+    },
+    {
+        "key": "messenger.sending",
+        "value": "Enviando..."
+    },
+    {
+        "key": "messenger.send",
+        "value": "Enviar Mensaje"
+    },
+    {
+        "key": "messenger.star",
+        "value": "Destacar"
+    },
+    {
+        "key": "messenger.unstar",
+        "value": "Quitar destacado"
+    },
+    {
+        "key": "messenger.archive",
+        "value": "Archivar"
+    },
+    {
+        "key": "messenger.delete",
+        "value": "Eliminar"
+    },
+    {
+        "key": "messenger.no_messages",
+        "value": "Sin mensajes aún"
+    },
+    {
+        "key": "messenger.you_sent_media",
+        "value": "Enviaste una foto"
+    },
+    {
+        "key": "messenger.sent_media",
+        "value": "Envió una foto"
+    },
+    {
+        "key": "messenger.you_sent_quick_reply",
+        "value": "Enviaste una respuesta rápida"
+    },
+    {
+        "key": "messenger.sent_quick_reply",
+        "value": "Envió una respuesta rápida"
+    },
+    {
+        "key": "messenger.you",
+        "value": "Tú"
+    },
+    {
+        "key": "messenger.loading_more",
+        "value": "Cargando más conversaciones..."
+    },
+    {
+        "key": "messenger.error_loading",
+        "value": "Error al Cargar Conversaciones"
+    },
+    {
+        "key": "messenger.error_loading_desc",
+        "value": "No se pudieron cargar las conversaciones. Por favor intente de nuevo."
+    },
+    {
+        "key": "common.retry",
+        "value": "Reintentar"
+    },
+    {
+        "key": "messenger.error",
+        "value": "Error"
+    },
+    {
+        "key": "messenger.max_retries",
+        "value": "Máximo de Intentos Alcanzado"
+    },
+    {
+        "key": "messenger.max_retries_desc",
+        "value": "Por favor recarga la página o contacta al soporte."
+    },
+    {
+        "key": "messenger.retry_success",
+        "value": "Reintento Exitoso"
+    },
+    {
+        "key": "messenger.retry_success_desc",
+        "value": "Operación completada con éxito."
+    },
+    {
+        "key": "messenger.retry_failed",
+        "value": "Reintento Fallido"
+    },
+    {
+        "key": "email.use_oauth2",
+        "value": "Usar Autenticación OAuth2 (Recomendado para Gmail)"
+    },
+    {
+        "key": "email.oauth2_client_id",
+        "value": "Client ID de OAuth2"
+    },
+    {
+        "key": "email.oauth2_client_id_placeholder",
+        "value": "Tu client ID de OAuth2"
+    },
+    {
+        "key": "email.oauth2_client_secret",
+        "value": "Client Secret de OAuth2"
+    },
+    {
+        "key": "email.oauth2_client_secret_placeholder",
+        "value": "Tu client secret de OAuth2"
+    },
+    {
+        "key": "email.oauth2_refresh_token",
+        "value": "Token de Actualización OAuth2"
+    },
+    {
+        "key": "email.oauth2_refresh_token_placeholder",
+        "value": "Tu token de actualización OAuth2"
+    },
+    {
+        "key": "email.oauth2_refresh_token_help",
+        "value": "Obténlo desde el flujo de autorización de tu proveedor OAuth2"
+    },
+    {
+        "key": "email.testing",
+        "value": "Probando..."
+    },
+    {
+        "key": "email.test_connection",
+        "value": "Probar Conexión"
+    },
+    {
+        "key": "email.creating",
+        "value": "Creando..."
+    },
+    {
+        "key": "email.create_connection",
+        "value": "Crear Conexión"
+    },
+    {
+        "key": "roles.permissions_updated",
+        "value": "Permisos Actualizados"
+    },
+    {
+        "key": "roles.admin_permissions_updated",
+        "value": "Los permisos de Administrador se han actualizado correctamente."
+    },
+    {
+        "key": "roles.agent_permissions_updated",
+        "value": "Los permisos de Agente se han actualizado correctamente."
+    },
+    {
+        "key": "roles.update_failed",
+        "value": "Error al actualizar permisos: {{error}}"
+    },
+    {
+        "key": "roles.roles_permissions",
+        "value": "Roles y Permisos"
+    },
+    {
+        "key": "roles.administrator",
+        "value": "Administrador"
+    },
+    {
+        "key": "roles.administrator_desc",
+        "value": "Acceso completo a todas las funciones y configuraciones"
+    },
+    {
+        "key": "roles.agent",
+        "value": "Agente"
+    },
+    {
+        "key": "roles.agent_desc",
+        "value": "Acceso limitado a las funciones principales"
+    },
+    {
+        "key": "roles.edit_permissions",
+        "value": "Editar Permisos"
+    },
+    {
+        "key": "roles.edit_admin_permissions",
+        "value": "Editar Permisos de Administrador"
+    },
+    {
+        "key": "roles.edit_agent_permissions",
+        "value": "Editar Permisos de Agente"
+    },
+    {
+        "key": "roles.configure_admin_permissions",
+        "value": "Configure los permisos para el rol de Administrador. Los cambios se aplicarán a todos los usuarios con este rol."
+    },
+    {
+        "key": "roles.configure_agent_permissions",
+        "value": "Configure los permisos para el rol de Agente. Los cambios se aplicarán a todos los usuarios con este rol."
+    },
+    {
+        "key": "roles.save_permissions",
+        "value": "Guardar Permisos"
+    },
+    {
+        "key": "roles.conversation_management",
+        "value": "Gestión de Conversaciones"
+    },
+    {
+        "key": "roles.view_all_conversations",
+        "value": "Ver Todas las Conversaciones"
+    },
+    {
+        "key": "roles.view_assigned_conversations",
+        "value": "Ver Conversaciones Asignadas"
+    },
+    {
+        "key": "roles.assign_conversations",
+        "value": "Asignar Conversaciones"
+    },
+    {
+        "key": "roles.manage_conversations",
+        "value": "Administrar Conversaciones"
+    },
+    {
+        "key": "roles.contact_management",
+        "value": "Gestión de Contactos"
+    },
+    {
+        "key": "roles.view_contacts",
+        "value": "Ver Contactos"
+    },
+    {
+        "key": "roles.manage_contacts",
+        "value": "Administrar Contactos"
+    },
+    {
+        "key": "roles.campaign_management",
+        "value": "Gestión de Campañas"
+    },
+    {
+        "key": "roles.view_campaigns",
+        "value": "Ver Campañas"
+    },
+    {
+        "key": "roles.create_campaigns",
+        "value": "Crear Campañas"
+    },
+    {
+        "key": "roles.edit_campaigns",
+        "value": "Editar Campañas"
+    },
+    {
+        "key": "roles.delete_campaigns",
+        "value": "Eliminar Campañas"
+    },
+    {
+        "key": "roles.manage_templates",
+        "value": "Administrar Plantillas"
+    },
+    {
+        "key": "roles.manage_segments",
+        "value": "Administrar Segmentos"
+    },
+    {
+        "key": "roles.view_campaign_analytics",
+        "value": "Ver Analíticas de Campañas"
+    },
+    {
+        "key": "roles.manage_whatsapp_accounts",
+        "value": "Administrar Cuentas de WhatsApp"
+    },
+    {
+        "key": "roles.pipeline_management",
+        "value": "Gestión de Pipeline"
+    },
+    {
+        "key": "roles.view_pipeline",
+        "value": "Ver Pipeline"
+    },
+    {
+        "key": "roles.manage_pipeline",
+        "value": "Administrar Pipeline"
+    },
+    {
+        "key": "roles.create_deals",
+        "value": "Crear Negocios"
+    },
+    {
+        "key": "roles.edit_deals",
+        "value": "Editar Negocios"
+    },
+    {
+        "key": "roles.delete_deals",
+        "value": "Eliminar Negocios"
+    },
+    {
+        "key": "roles.manage_pipeline_stages",
+        "value": "Administrar Etapas del Pipeline"
+    },
+    {
+        "key": "roles.channel_management",
+        "value": "Gestión de Canales"
+    },
+    {
+        "key": "roles.view_channels",
+        "value": "Ver Canales"
+    },
+    {
+        "key": "roles.manage_channels",
+        "value": "Administrar Canales"
+    },
+    {
+        "key": "roles.configure_channels",
+        "value": "Configurar Canales"
+    },
+    {
+        "key": "roles.flow_management",
+        "value": "Gestión de Flujos"
+    },
+    {
+        "key": "roles.view_flows",
+        "value": "Ver Flujos"
+    },
+    {
+        "key": "roles.manage_flows",
+        "value": "Administrar Flujos"
+    },
+    {
+        "key": "roles.analytics",
+        "value": "Analíticas"
+    },
+    {
+        "key": "roles.view_analytics",
+        "value": "Ver Analíticas"
+    },
+    {
+        "key": "roles.view_detailed_analytics",
+        "value": "Ver Analíticas Detalladas"
+    },
+    {
+        "key": "roles.team_management",
+        "value": "Gestión de Equipo"
+    },
+    {
+        "key": "roles.view_team",
+        "value": "Ver Equipo"
+    },
+    {
+        "key": "roles.manage_team",
+        "value": "Administrar Equipo"
+    },
+    {
+        "key": "roles.settings",
+        "value": "Configuración"
+    },
+    {
+        "key": "roles.view_settings",
+        "value": "Ver Configuración"
+    },
+    {
+        "key": "roles.manage_settings",
+        "value": "Administrar Configuración"
+    },
+    {
+        "key": "roles.calendar",
+        "value": "Calendario"
+    },
+    {
+        "key": "roles.view_calendar",
+        "value": "Ver Calendario"
+    },
+    {
+        "key": "roles.manage_calendar",
+        "value": "Administrar Calendario"
+    },
+    {
+        "key": "roles.page_management",
+        "value": "Gestión de Páginas"
+    },
+    {
+        "key": "roles.view_pages",
+        "value": "Ver Páginas"
+    },
+    {
+        "key": "roles.manage_pages",
+        "value": "Administrar Páginas"
+    },
+    {
+        "key": "whatsapp_business.validation_error",
+        "value": "Error de Validación"
+    },
+    {
+        "key": "whatsapp_business.required_fields",
+        "value": "El Token de Acceso y el ID de Número de Teléfono son obligatorios para la validación."
+    },
+    {
+        "key": "whatsapp_business.credentials_valid",
+        "value": "Credenciales Válidas"
+    },
+    {
+        "key": "whatsapp_business.validation_success",
+        "value": "Número de teléfono validado con éxito: {{phoneNumber}}"
+    },
+    {
+        "key": "whatsapp_business.invalid_credentials",
+        "value": "Credenciales inválidas"
+    },
+    {
+        "key": "whatsapp_business.validation_failed",
+        "value": "Validación Fallida"
+    },
+    {
+        "key": "whatsapp_business.validation_failed_desc",
+        "value": "Error al validar las credenciales de la API de WhatsApp Business."
+    },
+    {
+        "key": "whatsapp_business.test_error",
+        "value": "Error de Prueba"
+    },
+    {
+        "key": "whatsapp_business.webhook_required",
+        "value": "La URL del webhook y el token de verificación son obligatorios para las pruebas."
+    },
+    {
+        "key": "whatsapp_business.webhook_test_successful",
+        "value": "¡Prueba de Webhook Exitosa!"
+    },
+    {
+        "key": "whatsapp_business.webhook_test_success_desc",
+        "value": "Tu configuración de webhook está funcionando correctamente. Ahora puedes configurarla en la Consola de Meta para Desarrolladores."
+    },
+    {
+        "key": "whatsapp_business.webhook_test_failed",
+        "value": "Prueba de Webhook Fallida"
+    },
+    {
+        "key": "whatsapp_business.webhook_test_failed_desc",
+        "value": "Por favor verifica tu configuración de webhook e intenta de nuevo."
+    },
+    {
+        "key": "whatsapp_business.test_failed",
+        "value": "Prueba Fallida"
+    },
+    {
+        "key": "whatsapp_business.network_error",
+        "value": "Error de red. Por favor verifica tu conexión e intenta de nuevo."
+    },
+    {
+        "key": "whatsapp_business.phone_required",
+        "value": "Por favor ingresa un número de teléfono para probar el mensaje de plantilla."
+    },
+    {
+        "key": "whatsapp_business.save_first",
+        "value": "Por favor guarda la conexión primero antes de realizar pruebas."
+    },
+    {
+        "key": "whatsapp_business.temp_connection_failed",
+        "value": "Error al crear la conexión temporal para pruebas"
+    },
+    {
+        "key": "whatsapp_business.template_test_successful",
+        "value": "Prueba de Plantilla Exitosa"
+    },
+    {
+        "key": "whatsapp_business.template_test_success_desc",
+        "value": "Mensaje de plantilla enviado con éxito a {{phone}}. ID de mensaje: {{messageId}}"
+    },
+    {
+        "key": "whatsapp_business.template_test_failed",
+        "value": "Prueba de Plantilla Fallida"
+    },
+    {
+        "key": "whatsapp_business.template_test_failed_desc",
+        "value": "Error al enviar el mensaje de plantilla."
+    },
+    {
+        "key": "whatsapp_business.connection_created",
+        "value": "API de WhatsApp Business Conectada"
+    },
+    {
+        "key": "whatsapp_business.connection_created_desc",
+        "value": "¡Tu cuenta de API de WhatsApp Business se ha conectado con éxito!"
+    },
+    {
+        "key": "whatsapp_business.connection_error",
+        "value": "Error de Conexión"
+    },
+    {
+        "key": "whatsapp_business.connection_error_desc",
+        "value": "Error al conectarse a la API de WhatsApp Business"
+    },
+    {
+        "key": "whatsapp_business.connection_failed",
+        "value": "Error al crear la conexión de la API de WhatsApp Business"
+    },
+    {
+        "key": "whatsapp_business.account_name",
+        "value": "Nombre de la Cuenta"
+    },
+    {
+        "key": "whatsapp_business.account_name_placeholder",
+        "value": "Ej. Mi Empresa"
+    },
+    {
+        "key": "whatsapp_business.account_name_help",
+        "value": "Un nombre para identificar esta conexión"
+    },
+    {
+        "key": "whatsapp_business.phone_number_id",
+        "value": "ID de Número de Teléfono"
+    },
+    {
+        "key": "whatsapp_business.phone_number_id_help",
+        "value": "Desde el panel de Meta para Desarrolladores"
+    },
+    {
+        "key": "whatsapp_business.business_account_id",
+        "value": "ID de Cuenta de Negocio"
+    },
+    {
+        "key": "whatsapp_business.access_token",
+        "value": "Token de Acceso"
+    },
+    {
+        "key": "whatsapp_business.access_token_placeholder",
+        "value": "EAAxxxxx..."
+    },
+    {
+        "key": "whatsapp_business.access_token_help",
+        "value": "Token de acceso de larga duración o permanente desde Meta para Desarrolladores"
+    },
+    {
+        "key": "whatsapp_business.app_id",
+        "value": "ID de la Aplicación"
+    },
+    {
+        "key": "whatsapp_business.app_secret",
+        "value": "Secreto de la Aplicación"
+    },
+    {
+        "key": "whatsapp_business.webhook_url",
+        "value": "URL del Webhook"
+    },
+    {
+        "key": "whatsapp_business.webhook_url_help",
+        "value": "Ingresa tu URL de webhook o usa la generada automáticamente. Copia esta URL y pégala en tu panel de Meta para Desarrolladores en la configuración de Webhooks."
+    },
+    {
+        "key": "whatsapp_business.webhook_verify_token",
+        "value": "Token de Verificación del Webhook"
+    },
+    {
+        "key": "whatsapp_business.webhook_verify_token_placeholder",
+        "value": "token_verificacion_predeterminado"
+    },
+    {
+        "key": "whatsapp_business.webhook_verify_token_help",
+        "value": "Este token debe coincidir con la variable de entorno WHATSAPP_WEBHOOK_VERIFY_TOKEN en tu servidor. Copia este token y pégalo en el campo \"Token de verificación\" en la configuración de webhook de Meta para Desarrolladores."
+    },
+    {
+        "key": "whatsapp_business.connection_specific_token",
+        "value": "✅ Token Específico de Conexión: Este token de verificación se almacenará con tu conexión de API de WhatsApp Business:"
+    },
+    {
+        "key": "whatsapp_business.token_instructions",
+        "value": "Ingresa este token exacto en la configuración de webhook de tu Consola de Meta para Desarrolladores. Cada conexión de API de WhatsApp Business puede tener su propio token de verificación único."
+    },
+    {
+        "key": "whatsapp_business.test_webhook_config",
+        "value": "Probar Configuración de Webhook"
+    },
+    {
+        "key": "whatsapp_business.test_webhook_desc",
+        "value": "Prueba tu configuración de webhook antes de enviarlo a Meta"
+    },
+    {
+        "key": "whatsapp_business.test_webhook_help",
+        "value": "Esto verificará que tu URL de webhook es accesible y responde correctamente a las solicitudes de verificación de Meta."
+    },
+    {
+        "key": "whatsapp_business.test_template_message",
+        "value": "Probar Mensaje de Plantilla (Opcional)"
+    },
+    {
+        "key": "whatsapp_business.test_template_placeholder",
+        "value": "+1234567890"
+    },
+    {
+        "key": "whatsapp_business.test_template_help",
+        "value": "Envía un mensaje de plantilla \"hello_world\" de prueba para verificar que tu conexión funciona. Ingresa un número de teléfono con código de país (ej. +51987654321)."
+    },
+    {
+        "key": "whatsapp_business.development_mode_note",
+        "value": "Nota: Si tu API de WhatsApp Business está en modo de desarrollo, solo puedes enviar mensajes a números de teléfono añadidos a la \"lista de permitidos\" en tu panel de Meta para Desarrolladores."
+    },
+    {
+        "key": "whatsapp_business.learn_more",
+        "value": "Aprende cómo agregar números de teléfono →"
+    },
+    {
+        "key": "whatsapp_business.copy",
+        "value": "Copiar"
+    },
+    {
+        "key": "whatsapp_business.testing",
+        "value": "Probando..."
+    },
+    {
+        "key": "whatsapp_business.test_webhook",
+        "value": "Probar Webhook"
+    },
+    {
+        "key": "whatsapp_business.test",
+        "value": "Probar"
+    },
+    {
+        "key": "whatsapp_business.validating",
+        "value": "Validando..."
+    },
+    {
+        "key": "whatsapp_business.connecting",
+        "value": "Conectando..."
+    },
+    {
+        "key": "whatsapp_business.connect",
+        "value": "Conectar"
+    },
+    {
+        "key": "ai_usage.limit_exceeded",
+        "value": "Límite Excedido"
+    },
+    {
+        "key": "ai_usage.warning",
+        "value": "Advertencia"
+    },
+    {
+        "key": "ai_usage.company_credentials",
+        "value": "Empresa"
+    },
+    {
+        "key": "ai_usage.system_credentials",
+        "value": "Sistema"
+    },
+    {
+        "key": "ai_usage.total_requests",
+        "value": "Total de Solicitudes"
+    },
+    {
+        "key": "ai_usage.total_tokens",
+        "value": "Total de Tokens"
+    },
+    {
+        "key": "ai_usage.total_cost",
+        "value": "Costo Total"
+    },
+    {
+        "key": "ai_usage.tokens",
+        "value": "Tokens"
+    },
+    {
+        "key": "ai_usage.cost",
+        "value": "Costo"
+    },
+    {
+        "key": "ai_usage.requests",
+        "value": "solicitudes"
+    },
+    {
+        "key": "ai_usage.usage_percentage",
+        "value": "{{percentage}}% del uso total"
+    },
+    {
+        "key": "ai_usage.tokens_count",
+        "value": "{{count}} tokens"
+    },
+    {
+        "key": "ai_usage.company_credentials_label",
+        "value": "Credenciales de Empresa"
+    },
+    {
+        "key": "ai_usage.system_credentials_label",
+        "value": "Credenciales del Sistema"
+    },
+    {
+        "key": "header.connection_active",
+        "value": "Conexión en tiempo real activa"
+    },
+    {
+        "key": "header.connected",
+        "value": "Conectado"
+    },
+    {
+        "key": "header.connection_lost",
+        "value": "Conexión en tiempo real perdida"
+    },
+    {
+        "key": "header.disconnected",
+        "value": "Desconectado"
+    },
+    {
+        "key": "admin.languages.edit_language",
+        "value": "Editar Idioma"
+    },
+    {
+        "key": "admin.languages.edit_language_desc",
+        "value": "Actualice la configuración del idioma."
+    },
+    {
+        "key": "admin.languages.update_failed",
+        "value": "Fallo al actualizar idioma"
+    },
+    {
+        "key": "admin.languages.language_updated",
+        "value": "Idioma actualizado"
+    },
+    {
+        "key": "admin.languages.language_updated_desc",
+        "value": "El idioma se ha actualizado correctamente."
+    },
+    {
+        "key": "admin.languages.updating",
+        "value": "Actualizando..."
+    },
+    {
+        "key": "admin.languages.update_language",
+        "value": "Actualizar Idioma"
+    },
+    {
+        "key": "admin.namespaces.create_namespace",
+        "value": "Crear Espacio de Nombres"
+    },
+    {
+        "key": "admin.namespaces.add_namespace",
+        "value": "Agregar Espacio de Nombres"
+    },
+    {
+        "key": "admin.namespaces.add_namespace_desc",
+        "value": "Crea un nuevo espacio de nombres para organizar traducciones."
+    },
+    {
+        "key": "admin.namespaces.name_label",
+        "value": "Nombre"
+    },
+    {
+        "key": "admin.namespaces.name_placeholder",
+        "value": "común"
+    },
+    {
+        "key": "admin.namespaces.description_label",
+        "value": "Descripción"
+    },
+    {
+        "key": "admin.namespaces.description_placeholder",
+        "value": "Traducciones comunes utilizadas en toda la aplicación"
+    },
+    {
+        "key": "admin.namespaces.create_failed",
+        "value": "Fallo al crear espacio de nombres"
+    },
+    {
+        "key": "admin.namespaces.namespace_created",
+        "value": "Espacio de nombres creado"
+    },
+    {
+        "key": "admin.namespaces.namespace_created_desc",
+        "value": "El espacio de nombres se ha creado correctamente."
+    },
+    {
+        "key": "admin.namespaces.creating",
+        "value": "Creando..."
+    },
+    {
+        "key": "admin.translations.export_array",
+        "value": "Exportar Matriz"
+    },
+    {
+        "key": "admin.translations.export_nested",
+        "value": "Exportar Anidado"
+    },
+    {
+        "key": "admin.translations.import_translations",
+        "value": "Importar Traducciones"
+    },
+    {
+        "key": "admin.translations.import_translations_desc",
+        "value": "Importa traducciones desde un archivo JSON. Admite formato de matriz y formato anidado."
+    },
+    {
+        "key": "admin.translations.select_file_language",
+        "value": "Por favor seleccione un idioma y un archivo"
     },
     {
         "key": "admin.translations.import_failed",
@@ -10441,6 +11888,10 @@
         "value": "Pipeline"
     },
     {
+        "key": "flow_builder.node_types.manage_contact",
+        "value": "Administrar Contacto"
+    },
+    {
         "key": "flow_builder.node_types.agent_handoff",
         "value": "Transferencia a Agente"
     },
@@ -10611,6 +12062,10 @@
     {
         "key": "flow_builder.woocommerce.click_to_copy",
         "value": "Clic para copiar"
+    },
+    {
+        "key": "flow_builder.node_types.whatsapp_flows",
+        "value": "Flujos de WhatsApp"
     },
     {
         "key": "flow_builder.node_types.typebot",
@@ -11921,30 +13376,6 @@
         "value": "WhatsApp"
     },
     {
-        "key": "settings.tabs.whatsapp_proxy",
-        "value": "Proxy de WhatsApp"
-    },
-    {
-        "key": "settings.tabs.proxy",
-        "value": "Proxy"
-    },
-    {
-        "key": "settings.tabs.general_settings",
-        "value": "Configuración General"
-    },
-    {
-        "key": "settings.tabs.general",
-        "value": "General"
-    },
-    {
-        "key": "settings.tabs.contact_custom_fields",
-        "value": "Campos Personalizados"
-    },
-    {
-        "key": "settings.tabs.custom_fields",
-        "value": "Campos Personalizados"
-    },
-    {
         "key": "settings.tabs.billing",
         "value": "Facturación"
     },
@@ -11985,12 +13416,28 @@
         "value": "Plataforma"
     },
     {
-        "key": "settings.channel_connections.title",
-        "value": "Conexiones de Canal"
+        "key": "settings.tabs.whatsapp_proxy",
+        "value": "Proxy de WhatsApp"
     },
     {
-        "key": "settings.channel_connections.description",
-        "value": "Conecta y gestiona tus canales de comunicación"
+        "key": "settings.tabs.proxy",
+        "value": "Proxy"
+    },
+    {
+        "key": "settings.tabs.general_settings",
+        "value": "Configuración General"
+    },
+    {
+        "key": "settings.tabs.general",
+        "value": "General"
+    },
+    {
+        "key": "settings.tabs.contact_custom_fields",
+        "value": "Campos Personalizados"
+    },
+    {
+        "key": "settings.tabs.custom_fields",
+        "value": "Campos Personalizados"
     },
     {
         "key": "settings.custom_fields.title",
@@ -12111,6 +13558,14 @@
     {
         "key": "settings.custom_fields.delete_desc",
         "value": "¿Está seguro? Los datos de contacto existentes para este campo se conservarán pero ya no serán visibles en los formularios."
+    },
+    {
+        "key": "settings.channel_connections.title",
+        "value": "Conexiones de Canal"
+    },
+    {
+        "key": "settings.channel_connections.description",
+        "value": "Conecta y gestiona tus canales de comunicación"
     },
     {
         "key": "settings.billing.title",
@@ -12499,6 +13954,14 @@
     {
         "key": "flow_builder.ai_function_name_placeholder",
         "value": "ej., compartir_documento"
+    },
+    {
+        "key": "flow_builder.ai_function_name_validation",
+        "value": "El nombre de función solo puede contener letras minúsculas y guiones bajos (ej. funcion_uno, compartir_documento)"
+    },
+    {
+        "key": "flow_builder.ai_function_name_tip",
+        "value": "💡 Use solo letras minúsculas y guiones bajos (ej. funcion_uno, funcion_dos)"
     },
     {
         "key": "flow_builder.ai_task_description_label",
@@ -13186,7 +14649,7 @@
     },
     {
         "key": "flow_builder.ai_voice_processing_openai",
-        "value": "Tanto Speech-to-Text como Text-to-Speech usan APIs de OpenAI"
+        "value": "Speech-to-Text y Text-to-Speech usan ambas APIs de OpenAI"
     },
     {
         "key": "flow_builder.ai_voice_processing_label",
@@ -13245,12 +14708,176 @@
         "value": "Ejecución de Tareas"
     },
     {
+        "key": "flow_builder.ai_task_execution_help_tooltip",
+        "value": "Ayuda y Documentación"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_title",
+        "value": "Ejecución de Tareas - Ayuda y Documentación"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_subtitle",
+        "value": "Aprende a usar las llamadas de función de IA y el enrutamiento dinámico de flujos"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_overview_title",
+        "value": "¿Qué es la Ejecución de Tareas?"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_overview_content",
+        "value": "La ejecución de tareas habilita las llamadas de función de IA, permitiendo que la IA active acciones específicas y enrute conversaciones a diferentes caminos de flujo según la intención del usuario."
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_overview_benefits",
+        "value": "Beneficios clave: enrutamiento dinámico, acciones automatizadas, respuestas contextuales e integración con sistemas externos."
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_usecases_title",
+        "value": "Casos de Uso"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_usecase_1",
+        "value": "Compartir documentos/folletos cuando los usuarios solicitan información específica"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_usecase_2",
+        "value": "Reservar citas o programar devoluciones de llamada"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_usecase_3",
+        "value": "Recopilar datos estructurados a través de formularios conversacionales"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_usecase_4",
+        "value": "Enrutar a diferentes caminos de flujo según la intención del usuario"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_usecase_5",
+        "value": "Activar llamadas a API externas o webhooks"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_config_title",
+        "value": "Campos de Configuración"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_task_name",
+        "value": "Nombre de la Tarea"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_task_name_desc",
+        "value": "Nombre descriptivo para identificación"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_function_name",
+        "value": "Nombre de Función"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_function_name_desc",
+        "value": "Identificador técnico (minúsculas, solo guiones bajos) usado por la IA"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_task_description",
+        "value": "Descripción de la Tarea"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_task_description_desc",
+        "value": "Notas internas sobre el propósito de la tarea"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_ai_description",
+        "value": "Descripción de Función IA"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_ai_description_desc",
+        "value": "Campo crítico - instrucciones detalladas para cuando la IA debe llamar a esta función. Enfatiza la especificidad para evitar activaciones falsas."
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_output_handle",
+        "value": "ID de Salida"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_output_handle_desc",
+        "value": "Identificador único para el punto de conexión del flujo"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_enabled",
+        "value": "Interruptor de Activación"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_field_enabled_desc",
+        "value": "Activar/desactivar sin eliminar"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_best_practices_title",
+        "value": "Mejores Prácticas"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_best_practice_1",
+        "value": "Use frases de activación específicas en la Descripción de Función IA (ej. \"Llamar SOLO cuando el usuario solicite explícitamente...\")"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_best_practice_2",
+        "value": "Mantén los nombres de función descriptivos pero concisos"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_best_practice_3",
+        "value": "Prueba las tareas exhaustivamente para evitar activaciones falsas"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_best_practice_4",
+        "value": "Use identificadores de salida para crear caminos de flujo claros"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_best_practice_5",
+        "value": "Desactiva las tareas no utilizadas en lugar de eliminarlas"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_examples_title",
+        "value": "Ejemplos"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_example_1_title",
+        "value": "Ejemplo 1: Tarea de compartir documentos"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_example_1_desc",
+        "value": "Llamar cuando el usuario solicite información del producto o folleto"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_example_2_title",
+        "value": "Ejemplo 2: Tarea de reserva de cita"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_example_2_desc",
+        "value": "Llamar cuando el usuario quiera programar una reunión o cita"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_example_function",
+        "value": "Función"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_example_description",
+        "value": "Descripción"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_flow_title",
+        "value": "Enrutamiento de Flujo"
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_flow_content",
+        "value": "Cada tarea habilitada crea un identificador de salida dinámico. Conecta los identificadores de salida a diferentes nodos de flujo. La IA enruta automáticamente al camino apropiado cuando se llama a la función."
+    },
+    {
+        "key": "flow_builder.ai_task_execution_help_flow_diagram",
+        "value": "Flujo de ejecución de tareas:"
+    },
+    {
         "key": "flow_builder.ai_voice_processing_openai",
         "value": "Speech-to-Text y Text-to-Speech usan ambas APIs de OpenAI"
     },
     {
         "key": "flow_builder.ai_default_system_prompt",
-        "value": "Eres un asistente útil. Responde a las preguntas del usuario de forma concisa y precisa. Realiza acciones específicas solo cuando el usuario las solicita explícitamente."
+        "value": "Eres un asistente útil. Responde las preguntas de los usuarios de manera concisa y precisa. Solo realiza acciones específicas cuando el usuario las solicite explícitamente."
     },
     {
         "key": "flow_builder.ai_voice_only_mode",
@@ -14933,6 +16560,46 @@
         "value": "Eliminar nodo"
     },
     {
+        "key": "flow_builder.ai_task_active",
+        "value": "Activo"
+    },
+    {
+        "key": "flow_builder.ai_task_inactive",
+        "value": "Inactivo"
+    },
+    {
+        "key": "flow_builder.ai_task_name_label",
+        "value": "Nombre de la Tarea"
+    },
+    {
+        "key": "flow_builder.ai_task_name_placeholder",
+        "value": "ej., Compartir Folleto de Producto"
+    },
+    {
+        "key": "flow_builder.ai_function_name_label",
+        "value": "Nombre de la Función"
+    },
+    {
+        "key": "flow_builder.ai_function_name_placeholder",
+        "value": "ej., compartir_documento"
+    },
+    {
+        "key": "flow_builder.ai_function_name_validation",
+        "value": "El nombre de función solo puede contener letras minúsculas y guiones bajos (ej. funcion_uno, compartir_documento)"
+    },
+    {
+        "key": "flow_builder.ai_function_name_tip",
+        "value": "💡 Use solo letras minúsculas y guiones bajos (ej. funcion_uno, funcion_dos)"
+    },
+    {
+        "key": "flow_builder.ai_task_description_label",
+        "value": "Descripción de la Tarea"
+    },
+    {
+        "key": "flow_builder.ai_task_description_placeholder",
+        "value": "Describe qué hace esta tarea y cuándo debe activarse"
+    },
+    {
         "key": "flow_builder.shopify_orders",
         "value": "Pedidos"
     },
@@ -16157,58 +17824,6 @@
         "value": "Error al actualizar la configuración de sincronización del historial"
     },
     {
-        "key": "settings.inbox.audio_transcription",
-        "value": "Transcripción de Audio"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_description",
-        "value": "Transcribir mensajes de audio entrantes en la bandeja de entrada usando OpenAI Whisper"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_enabled",
-        "value": "Habilitar Transcripción de Audio"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_enabled_description",
-        "value": "Permitir transcripción de mensajes de audio entrantes en el chat"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_disabled",
-        "value": "Transcripción de audio deshabilitada"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_mode",
-        "value": "Modo de Transcripción"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_manual",
-        "value": "Manual"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_manual_desc",
-        "value": "El usuario hace clic en el botón para transcribir"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_automatic",
-        "value": "Automático"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_automatic_desc",
-        "value": "Transcribir cuando se carga el audio"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_settings_saved",
-        "value": "Configuración de transcripción guardada"
-    },
-    {
-        "key": "settings.inbox.audio_transcription_provider_note",
-        "value": "La transcripción usa OpenAI Whisper. Configure las credenciales de OpenAI en la configuración de Credenciales AI."
-    },
-    {
-        "key": "settings.inbox.save_transcription_settings",
-        "value": "Guardar Configuración de Transcripción"
-    },
-    {
         "key": "groups.create_conversation_failed",
         "value": "Fallo al crear conversación"
     },
@@ -16903,10 +18518,6 @@
     {
         "key": "flow_builder.has_media",
         "value": "Tiene Multimedia"
-    },
-    {
-        "key": "flow_builder.matches_pattern",
-        "value": "coincide con el patrón"
     },
     {
         "key": "flow_builder.changes_saved_automatically",
@@ -17873,6 +19484,1042 @@
         "value": "Clave API copiada al portapapeles"
     },
     {
+        "key": "landing.nav.features",
+        "value": "Características"
+    },
+    {
+        "key": "landing.nav.pricing",
+        "value": "Precios"
+    },
+    {
+        "key": "landing.nav.about",
+        "value": "Acerca de"
+    },
+    {
+        "key": "landing.nav.contact",
+        "value": "Contacto"
+    },
+    {
+        "key": "landing.nav.sign_in",
+        "value": "Iniciar Sesión"
+    },
+    {
+        "key": "landing.nav.get_started",
+        "value": "Comenzar"
+    },
+    {
+        "key": "landing.hero.title",
+        "value": "¿Listo para transformar la comunicación con tus clientes?"
+    },
+    {
+        "key": "landing.hero.subtitle",
+        "value": "Únete a miles de empresas que usan {{appName}} para optimizar sus interacciones con clientes y aumentar las tasas de satisfacción."
+    },
+    {
+        "key": "landing.hero.start_free_trial",
+        "value": "Comenzar Prueba Gratuita"
+    },
+    {
+        "key": "landing.hero.sign_in",
+        "value": "Iniciar Sesión"
+    },
+    {
+        "key": "landing.trust.enterprise_security",
+        "value": "Seguridad Empresarial"
+    },
+    {
+        "key": "landing.trust.uptime",
+        "value": "99.9% Tiempo de Actividad"
+    },
+    {
+        "key": "landing.trust.soc2_compliant",
+        "value": "Cumplimiento SOC 2"
+    },
+    {
+        "key": "landing.pricing.title",
+        "value": "Precios simples y transparentes"
+    },
+    {
+        "key": "landing.pricing.subtitle",
+        "value": "Elige el plan perfecto para tu negocio. Comienza gratis, actualiza cuando necesites más."
+    },
+    {
+        "key": "landing.pricing.loading",
+        "value": "Cargando planes de precios..."
+    },
+    {
+        "key": "landing.pricing.error",
+        "value": "Error al cargar los planes de precios"
+    },
+    {
+        "key": "landing.pricing.retry",
+        "value": "Reintentar"
+    },
+    {
+        "key": "landing.pricing.most_popular",
+        "value": "Más Popular"
+    },
+    {
+        "key": "landing.pricing.per_month",
+        "value": "por mes"
+    },
+    {
+        "key": "landing.pricing.forever",
+        "value": "para siempre"
+    },
+    {
+        "key": "landing.pricing.free",
+        "value": "Gratis"
+    },
+    {
+        "key": "landing.pricing.get_started_free",
+        "value": "Comenzar Gratis"
+    },
+    {
+        "key": "landing.pricing.start_trial",
+        "value": "Comenzar Prueba Gratuita de {{days}} Días"
+    },
+    {
+        "key": "landing.pricing.get_started",
+        "value": "Comenzar"
+    },
+    {
+        "key": "landing.pricing.users",
+        "value": "Hasta {{count}} usuarios"
+    },
+    {
+        "key": "landing.pricing.contacts",
+        "value": "{{count}} contactos"
+    },
+    {
+        "key": "landing.pricing.channels",
+        "value": "{{count}} canales"
+    },
+    {
+        "key": "landing.pricing.flows",
+        "value": "{{count}} flujos"
+    },
+    {
+        "key": "landing.cta.title",
+        "value": "¿Listo para transformar la comunicación con tus clientes?"
+    },
+    {
+        "key": "landing.cta.subtitle",
+        "value": "Únete a miles de empresas que usan {{appName}} para optimizar sus interacciones con clientes y aumentar las tasas de satisfacción."
+    },
+    {
+        "key": "landing.cta.start_free_trial",
+        "value": "Comenzar Prueba Gratuita"
+    },
+    {
+        "key": "landing.cta.sign_in",
+        "value": "Iniciar Sesión"
+    },
+    {
+        "key": "zoho_calendar.oauth_not_configured",
+        "value": "OAuth de Zoho Calendar no configurado en los ajustes de administración"
+    },
+    {
+        "key": "zoho_calendar.oauth_not_properly_configured",
+        "value": "OAuth de Zoho Calendar no configurado correctamente o deshabilitado"
+    },
+    {
+        "key": "zoho_calendar.no_credentials_available",
+        "value": "No hay credenciales disponibles para la generación de URL de autenticación"
+    },
+    {
+        "key": "zoho_calendar.auth_code_not_provided",
+        "value": "Código de autorización no proporcionado"
+    },
+    {
+        "key": "zoho_calendar.invalid_state_parameter",
+        "value": "Parámetro de estado inválido"
+    },
+    {
+        "key": "zoho_calendar.auth_failed",
+        "value": "Error al autenticar con Zoho"
+    },
+    {
+        "key": "zoho_calendar.invalid_client_id",
+        "value": "Client ID de Zoho inválido. Por favor verifica tu configuración en Zoho Developer Console."
+    },
+    {
+        "key": "zoho_calendar.invalid_request",
+        "value": "Solicitud OAuth inválida. Por favor verifica la configuración de tu aplicación Zoho."
+    },
+    {
+        "key": "zoho_calendar.access_denied",
+        "value": "Acceso denegado. Por favor asegúrate de tener los permisos requeridos."
+    },
+    {
+        "key": "zoho_calendar.client_not_available",
+        "value": "Cliente de Zoho Calendar no disponible"
+    },
+    {
+        "key": "zoho_calendar.primary_calendar_not_found",
+        "value": "Calendario principal no encontrado"
+    },
+    {
+        "key": "zoho_calendar.no_calendars_found",
+        "value": "No se encontraron calendarios para el usuario"
+    },
+    {
+        "key": "zoho_calendar.no_suitable_calendar_found",
+        "value": "No se encontró un calendario adecuado"
+    },
+    {
+        "key": "zoho_calendar.calendar_no_id_field",
+        "value": "Calendario encontrado pero sin campo de ID"
+    },
+    {
+        "key": "zoho_calendar.start_end_times_required",
+        "value": "Las horas de inicio y fin son obligatorias"
+    },
+    {
+        "key": "zoho_calendar.all_endpoints_failed",
+        "value": "Todos los endpoints de la API fallaron"
+    },
+    {
+        "key": "zoho_calendar.failed_create_event",
+        "value": "Error al crear el evento del calendario"
+    },
+    {
+        "key": "zoho_calendar.failed_list_events",
+        "value": "Error al listar los eventos del calendario"
+    },
+    {
+        "key": "zoho_calendar.failed_fetch_current_event",
+        "value": "Error al obtener el evento actual para actualización"
+    },
+    {
+        "key": "zoho_calendar.event_not_found_update",
+        "value": "Evento no encontrado para actualización"
+    },
+    {
+        "key": "zoho_calendar.failed_update_event",
+        "value": "Error al actualizar el evento del calendario"
+    },
+    {
+        "key": "zoho_calendar.failed_delete_event",
+        "value": "Error al eliminar el evento del calendario"
+    },
+    {
+        "key": "zoho_calendar.not_connected",
+        "value": "No conectado a Zoho Calendar"
+    },
+    {
+        "key": "zoho_calendar.connection_failed",
+        "value": "La conexión a Zoho Calendar falló"
+    },
+    {
+        "key": "zoho_calendar.connected",
+        "value": "Conectado a Zoho Calendar"
+    },
+    {
+        "key": "zoho_calendar.connected_token_refreshed",
+        "value": "Conectado a Zoho Calendar (token actualizado)"
+    },
+    {
+        "key": "zoho_calendar.error_checking_connection",
+        "value": "Error al verificar la conexión de Zoho Calendar"
+    },
+    {
+        "key": "zoho_calendar.date_range_required",
+        "value": "Se requiere una fecha o rango de fechas"
+    },
+    {
+        "key": "zoho_calendar.failed_get_availability",
+        "value": "Error al obtener los horarios disponibles"
+    },
+    {
+        "key": "calendar.create_events_with",
+        "value": "Crear Eventos Con:"
+    },
+    {
+        "key": "calendar.google_calendar",
+        "value": "Google Calendar"
+    },
+    {
+        "key": "calendar.zoho_calendar",
+        "value": "Zoho Calendar"
+    },
+    {
+        "key": "calendar.view",
+        "value": "Ver"
+    },
+    {
+        "key": "calendar.all_calendars",
+        "value": "Todos los Calendarios"
+    },
+    {
+        "key": "calendar.google",
+        "value": "Google"
+    },
+    {
+        "key": "calendar.zoho",
+        "value": "Zoho"
+    },
+    {
+        "key": "calendar.personal_teams",
+        "value": "Personal, Equipos"
+    },
+    {
+        "key": "calendar.enter_email_address",
+        "value": "Ingresa la dirección de correo"
+    },
+    {
+        "key": "calendar.creating",
+        "value": "Creando..."
+    },
+    {
+        "key": "calendar.create_appointment",
+        "value": "Crear Cita"
+    },
+    {
+        "key": "calendar.edit_appointment",
+        "value": "Editar Cita"
+    },
+    {
+        "key": "calendar.from",
+        "value": "de"
+    },
+    {
+        "key": "calendar.update_appointment_details",
+        "value": "Actualiza los detalles de tu cita."
+    },
+    {
+        "key": "calendar.color.blue",
+        "value": "Azul"
+    },
+    {
+        "key": "calendar.color.green",
+        "value": "Verde"
+    },
+    {
+        "key": "calendar.color.purple",
+        "value": "Morado"
+    },
+    {
+        "key": "calendar.color.red",
+        "value": "Rojo"
+    },
+    {
+        "key": "calendar.color.yellow",
+        "value": "Amarillo"
+    },
+    {
+        "key": "calendar.color.orange",
+        "value": "Naranja"
+    },
+    {
+        "key": "calendar.color.turquoise",
+        "value": "Turquesa"
+    },
+    {
+        "key": "calendar.color.gray",
+        "value": "Gris"
+    },
+    {
+        "key": "calendar.updating",
+        "value": "Actualizando..."
+    },
+    {
+        "key": "calendar.update_appointment",
+        "value": "Actualizar Cita"
+    },
+    {
+        "key": "calendar.schedule_new_appointment",
+        "value": "Programar Nueva Cita"
+    },
+    {
+        "key": "calendar.create_new_event",
+        "value": "Crea un nuevo evento en tu calendario."
+    },
+    {
+        "key": "calendar.categories",
+        "value": "Categorías"
+    },
+    {
+        "key": "calendar.sun",
+        "value": "Dom"
+    },
+    {
+        "key": "calendar.mon",
+        "value": "Lun"
+    },
+    {
+        "key": "calendar.tue",
+        "value": "Mar"
+    },
+    {
+        "key": "calendar.wed",
+        "value": "Mié"
+    },
+    {
+        "key": "calendar.thu",
+        "value": "Jue"
+    },
+    {
+        "key": "calendar.fri",
+        "value": "Vie"
+    },
+    {
+        "key": "calendar.sat",
+        "value": "Sáb"
+    },
+    {
+        "key": "calendar.more",
+        "value": "más"
+    },
+    {
+        "key": "calendar.week_of",
+        "value": "Semana del"
+    },
+    {
+        "key": "calendar.check_availability",
+        "value": "Verificar Disponibilidad"
+    },
+    {
+        "key": "calendar.schedule_appointment",
+        "value": "Programar Cita"
+    },
+    {
+        "key": "calendar.no_available_slots",
+        "value": "No se encontraron franjas horarias disponibles para la fecha y duración seleccionadas"
+    },
+    {
+        "key": "calendar.checking",
+        "value": "Comprobando..."
+    },
+    {
+        "key": "calendar.refresh_availability",
+        "value": "Actualizar Disponibilidad"
+    },
+    {
+        "key": "calendar.schedule.work",
+        "value": "Trabajo"
+    },
+    {
+        "key": "calendar.schedule.personal",
+        "value": "Personal"
+    },
+    {
+        "key": "calendar.schedule.family",
+        "value": "Familia"
+    },
+    {
+        "key": "calendar.schedule.health",
+        "value": "Salud"
+    },
+    {
+        "key": "calendar.schedule.projects",
+        "value": "Proyectos"
+    },
+    {
+        "key": "calendar.canceling",
+        "value": "Cancelando..."
+    },
+    {
+        "key": "calendar.yes_cancel_appointment",
+        "value": "Sí, Cancelar Cita"
+    },
+    {
+        "key": "calendar.name",
+        "value": "Nombre"
+    },
+    {
+        "key": "calendar.enter_schedule_name",
+        "value": "Por favor, introduzca un nombre para el horario"
+    },
+    {
+        "key": "calendar.color",
+        "value": "Color"
+    },
+    {
+        "key": "calendar.select_color",
+        "value": "Seleccionar color"
+    },
+    {
+        "key": "calendar.my_schedules",
+        "value": "Mis Horarios"
+    },
+    {
+        "key": "calendar.duration",
+        "value": "Duración"
+    },
+    {
+        "key": "calendar.duration.15_minutes",
+        "value": "15 minutos"
+    },
+    {
+        "key": "calendar.duration.30_minutes",
+        "value": "30 minutos"
+    },
+    {
+        "key": "calendar.duration.60_minutes",
+        "value": "60 minutos"
+    },
+    {
+        "key": "calendar.duration.90_minutes",
+        "value": "90 minutos"
+    },
+    {
+        "key": "settings.updated",
+        "value": "Configuración Actualizada"
+    },
+    {
+        "key": "settings.update_failed",
+        "value": "Error al actualizar la configuración"
+    },
+    {
+        "key": "settings.browser_notifications_enabled",
+        "value": "Las notificaciones del navegador están ahora habilitadas"
+    },
+    {
+        "key": "settings.browser_notifications_disabled",
+        "value": "Las notificaciones del navegador están ahora deshabilitadas"
+    },
+    {
+        "key": "settings.notifications_not_supported",
+        "value": "Notificaciones No Compatibles"
+    },
+    {
+        "key": "settings.notifications_not_supported_desc",
+        "value": "Tu navegador no es compatible con las notificaciones."
+    },
+    {
+        "key": "settings.notification_permission_denied",
+        "value": "Permiso Denegado"
+    },
+    {
+        "key": "settings.notification_permission_denied_desc",
+        "value": "Por favor habilita las notificaciones en la configuración de tu navegador para recibir alertas."
+    },
+    {
+        "key": "settings.inbox.browser_notifications",
+        "value": "Notificaciones del Navegador"
+    },
+    {
+        "key": "settings.inbox.browser_notifications_description",
+        "value": "Recibe notificaciones de escritorio cuando lleguen nuevos mensajes (solo cuando la página no está en primer plano)"
+    },
+    {
+        "key": "settings.inbox.notifications_blocked",
+        "value": "Las notificaciones están bloqueadas. Por favor habilítalas en la configuración de tu navegador."
+    },
+    {
+        "key": "settings.inbox.notifications_permission_needed",
+        "value": "Se solicitará permiso cuando habilites las notificaciones."
+    },
+    {
+        "key": "settings.inbox.browser_notifications_enabled_info",
+        "value": "Recibirás notificaciones de escritorio para nuevos mensajes cuando la página no esté en primer plano. Puedes probar las notificaciones usando el botón de abajo."
+    },
+    {
+        "key": "settings.inbox.test_notification",
+        "value": "Probar Notificación"
+    },
+    {
+        "key": "settings.inbox.audio_transcription",
+        "value": "Transcripción de Audio"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_description",
+        "value": "Transcribir mensajes de audio entrantes en la bandeja de entrada usando OpenAI Whisper"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_enabled",
+        "value": "Habilitar Transcripción de Audio"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_enabled_description",
+        "value": "Permitir transcripción de mensajes de audio entrantes en el chat"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_disabled",
+        "value": "Transcripción de audio deshabilitada"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_mode",
+        "value": "Modo de Transcripción"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_manual",
+        "value": "Manual"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_manual_desc",
+        "value": "El usuario hace clic en el botón para transcribir"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_automatic",
+        "value": "Automático"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_automatic_desc",
+        "value": "Transcribir cuando se carga el audio"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_settings_saved",
+        "value": "Configuración de transcripción guardada"
+    },
+    {
+        "key": "settings.inbox.audio_transcription_provider_note",
+        "value": "La transcripción usa OpenAI Whisper. Configure las credenciales de OpenAI en la configuración de Credenciales AI."
+    },
+    {
+        "key": "settings.inbox.save_transcription_settings",
+        "value": "Guardar Configuración de Transcripción"
+    },
+    {
+        "key": "notifications.conversation_opened",
+        "value": "Conversación Abierta"
+    },
+    {
+        "key": "notifications.navigated_to_conversation",
+        "value": "Navegado a la conversación desde la notificación"
+    },
+    {
+        "key": "backup.title",
+        "value": "Copia de Seguridad y Restauración del Buzón"
+    },
+    {
+        "key": "backup.description",
+        "value": "Crea copias de seguridad de tus datos del buzón y restaura desde copias anteriores. Los archivos multimedia se excluyen para mantener el tamaño manejable."
+    },
+    {
+        "key": "backup.create_backup",
+        "value": "Crear Copia de Seguridad"
+    },
+    {
+        "key": "backup.history_title",
+        "value": "Historial de Copias de Seguridad"
+    },
+    {
+        "key": "backup.history_description",
+        "value": "Ver y gestionar tus archivos de copia de seguridad"
+    },
+    {
+        "key": "backup.no_backups",
+        "value": "No se encontraron copias de seguridad"
+    },
+    {
+        "key": "backup.create_first_backup",
+        "value": "Crea tu primera copia de seguridad para comenzar"
+    },
+    {
+        "key": "backup.contacts",
+        "value": "contactos"
+    },
+    {
+        "key": "backup.conversations",
+        "value": "conversaciones"
+    },
+    {
+        "key": "backup.messages",
+        "value": "mensajes"
+    },
+    {
+        "key": "backup.created",
+        "value": "Creado"
+    },
+    {
+        "key": "backup.completed",
+        "value": "Completado"
+    },
+    {
+        "key": "backup.download",
+        "value": "Descargar"
+    },
+    {
+        "key": "backup.delete",
+        "value": "Eliminar"
+    },
+    {
+        "key": "backup.scheduled",
+        "value": "Programado"
+    },
+    {
+        "key": "backup.status.pending",
+        "value": "Pendiente"
+    },
+    {
+        "key": "backup.status.in_progress",
+        "value": "En Progreso"
+    },
+    {
+        "key": "backup.status.completed",
+        "value": "Completado"
+    },
+    {
+        "key": "backup.status.failed",
+        "value": "Fallido"
+    },
+    {
+        "key": "backup.status.cancelled",
+        "value": "Cancelado"
+    },
+    {
+        "key": "backup.create_backup_title",
+        "value": "Crear Nueva Copia de Seguridad"
+    },
+    {
+        "key": "backup.create_backup_desc",
+        "value": "Configura los ajustes de tu copia de seguridad. Los archivos multimedia se excluirán para mantener el tamaño manejable."
+    },
+    {
+        "key": "backup.name",
+        "value": "Nombre de la Copia de Seguridad"
+    },
+    {
+        "key": "backup.name_placeholder",
+        "value": "Ingresa el nombre de la copia de seguridad"
+    },
+    {
+        "key": "backup.description_optional",
+        "value": "Descripción (Opcional)"
+    },
+    {
+        "key": "backup.description_placeholder",
+        "value": "Ingresa una descripción de la copia de seguridad"
+    },
+    {
+        "key": "backup.include_data",
+        "value": "Incluir Datos"
+    },
+    {
+        "key": "backup.include_contacts",
+        "value": "Contactos"
+    },
+    {
+        "key": "backup.include_conversations",
+        "value": "Conversaciones"
+    },
+    {
+        "key": "backup.include_messages",
+        "value": "Mensajes (Solo Texto)"
+    },
+    {
+        "key": "backup.date_range",
+        "value": "Rango de Fechas (Opcional)"
+    },
+    {
+        "key": "backup.start_date",
+        "value": "Fecha de Inicio"
+    },
+    {
+        "key": "backup.end_date",
+        "value": "Fecha de Fin"
+    },
+    {
+        "key": "backup.create",
+        "value": "Crear Copia de Seguridad"
+    },
+    {
+        "key": "backup.create_success_title",
+        "value": "Copia de Seguridad Iniciada"
+    },
+    {
+        "key": "backup.create_success_desc",
+        "value": "Tu copia de seguridad ha sido encolada y será procesada en breve."
+    },
+    {
+        "key": "backup.create_error_title",
+        "value": "Error en la Copia de Seguridad"
+    },
+    {
+        "key": "backup.validation_error",
+        "value": "Error de Validación"
+    },
+    {
+        "key": "backup.name_required",
+        "value": "El nombre de la copia de seguridad es obligatorio"
+    },
+    {
+        "key": "backup.download_error_title",
+        "value": "Error de Descarga"
+    },
+    {
+        "key": "backup.download_not_ready",
+        "value": "La copia de seguridad no está lista para descargar"
+    },
+    {
+        "key": "backup.download_success_title",
+        "value": "Descarga Iniciada"
+    },
+    {
+        "key": "backup.download_success_desc",
+        "value": "Tu archivo de copia de seguridad se está descargando."
+    },
+    {
+        "key": "backup.download_error_desc",
+        "value": "Error al descargar el archivo de copia de seguridad"
+    },
+    {
+        "key": "backup.delete_confirm_title",
+        "value": "Eliminar Copia de Seguridad"
+    },
+    {
+        "key": "backup.delete_confirm_desc",
+        "value": "¿Estás seguro de que deseas eliminar esta copia de seguridad? Esta acción no se puede deshacer."
+    },
+    {
+        "key": "backup.delete_success_title",
+        "value": "Copia de Seguridad Eliminada"
+    },
+    {
+        "key": "backup.delete_success_desc",
+        "value": "La copia de seguridad ha sido eliminada correctamente."
+    },
+    {
+        "key": "backup.delete_error_title",
+        "value": "Error al Eliminar"
+    },
+    {
+        "key": "restore.title",
+        "value": "Restaurar desde Copia de Seguridad"
+    },
+    {
+        "key": "restore.description",
+        "value": "Restaura los datos de tu buzón desde una copia de seguridad anterior o sube un archivo de copia de seguridad."
+    },
+    {
+        "key": "restore.start_restore",
+        "value": "Iniciar Restauración"
+    },
+    {
+        "key": "restore.history_title",
+        "value": "Historial de Restauraciones"
+    },
+    {
+        "key": "restore.history_description",
+        "value": "Ver tus operaciones de restauración anteriores"
+    },
+    {
+        "key": "restore.no_restores",
+        "value": "No se encontraron operaciones de restauración"
+    },
+    {
+        "key": "restore.start_first_restore",
+        "value": "Inicia tu primera restauración para comenzar"
+    },
+    {
+        "key": "restore.full_restore",
+        "value": "Restauración Completa"
+    },
+    {
+        "key": "restore.selective_restore",
+        "value": "Restauración Selectiva"
+    },
+    {
+        "key": "restore.conflict_resolution",
+        "value": "Resolución de Conflictos"
+    },
+    {
+        "key": "restore.items_restored",
+        "value": "Restaurados"
+    },
+    {
+        "key": "restore.items_skipped",
+        "value": "Omitidos"
+    },
+    {
+        "key": "restore.items_errored",
+        "value": "Errores"
+    },
+    {
+        "key": "restore.started",
+        "value": "Iniciado"
+    },
+    {
+        "key": "restore.completed",
+        "value": "Completado"
+    },
+    {
+        "key": "restore.status.pending",
+        "value": "Pendiente"
+    },
+    {
+        "key": "restore.status.in_progress",
+        "value": "En Progreso"
+    },
+    {
+        "key": "restore.status.completed",
+        "value": "Completado"
+    },
+    {
+        "key": "restore.status.failed",
+        "value": "Fallido"
+    },
+    {
+        "key": "restore.status.cancelled",
+        "value": "Cancelado"
+    },
+    {
+        "key": "restore.configure_title",
+        "value": "Configurar Restauración"
+    },
+    {
+        "key": "restore.configure_desc",
+        "value": "Selecciona una fuente de copia de seguridad y configura las opciones de restauración."
+    },
+    {
+        "key": "restore.backup_source",
+        "value": "Fuente de Copia de Seguridad"
+    },
+    {
+        "key": "restore.existing_backup",
+        "value": "Copia de Seguridad Existente"
+    },
+    {
+        "key": "restore.select_backup",
+        "value": "Selecciona una copia de seguridad"
+    },
+    {
+        "key": "restore.or",
+        "value": "O"
+    },
+    {
+        "key": "restore.upload_backup",
+        "value": "Subir Archivo de Copia de Seguridad"
+    },
+    {
+        "key": "restore.choose_file",
+        "value": "Elegir archivo de copia de seguridad"
+    },
+    {
+        "key": "restore.restore_type",
+        "value": "Tipo de Restauración"
+    },
+    {
+        "key": "restore.merge",
+        "value": "Combinar (Recomendado)"
+    },
+    {
+        "key": "restore.overwrite",
+        "value": "Sobrescribir"
+    },
+    {
+        "key": "restore.skip",
+        "value": "Omitir Existentes"
+    },
+    {
+        "key": "restore.merge_desc",
+        "value": "Combina los datos existentes con los datos de la copia de seguridad"
+    },
+    {
+        "key": "restore.overwrite_desc",
+        "value": "Reemplaza los datos existentes con los datos de la copia de seguridad"
+    },
+    {
+        "key": "restore.skip_desc",
+        "value": "Mantiene los datos existentes, omite los datos de la copia de seguridad"
+    },
+    {
+        "key": "restore.select_data",
+        "value": "Seleccionar Datos a Restaurar"
+    },
+    {
+        "key": "restore.restore_contacts",
+        "value": "Contactos"
+    },
+    {
+        "key": "restore.restore_conversations",
+        "value": "Conversaciones"
+    },
+    {
+        "key": "restore.restore_messages",
+        "value": "Mensajes"
+    },
+    {
+        "key": "restore.date_range",
+        "value": "Rango de Fechas (Opcional)"
+    },
+    {
+        "key": "restore.start_date",
+        "value": "Fecha de Inicio"
+    },
+    {
+        "key": "restore.end_date",
+        "value": "Fecha de Fin"
+    },
+    {
+        "key": "restore.create_success_title",
+        "value": "Restauración Iniciada"
+    },
+    {
+        "key": "restore.create_success_desc",
+        "value": "Tu proceso de restauración ha sido iniciado y será procesado en breve."
+    },
+    {
+        "key": "restore.create_error_title",
+        "value": "Error en la Restauración"
+    },
+    {
+        "key": "restore.file_error_title",
+        "value": "Archivo Inválido"
+    },
+    {
+        "key": "restore.file_error_desc",
+        "value": "Por favor selecciona un archivo de copia de seguridad válido (formato .gz)"
+    },
+    {
+        "key": "restore.validation_error",
+        "value": "Error de Validación"
+    },
+    {
+        "key": "restore.source_required",
+        "value": "Por favor selecciona una copia de seguridad o sube un archivo de copia de seguridad"
+    },
+    {
+        "key": "restore.confirm_title",
+        "value": "Confirmar Restauración"
+    },
+    {
+        "key": "restore.confirm_desc",
+        "value": "¿Estás seguro de que deseas iniciar el proceso de restauración? Esto modificará tus datos existentes según la estrategia de resolución de conflictos seleccionada."
+    },
+    {
+        "key": "restore.restore_summary",
+        "value": "Resumen de Restauración:"
+    },
+    {
+        "key": "restore.type",
+        "value": "Tipo"
+    },
+    {
+        "key": "restore.source",
+        "value": "Fuente"
+    },
+    {
+        "key": "restore.backup_id",
+        "value": "ID de Copia de Seguridad"
+    },
+    {
+        "key": "restore.confirm_restore",
+        "value": "Confirmar Restauración"
+    },
+    {
+        "key": "nav.grace_period",
+        "value": "Período de gracia"
+    },
+    {
+        "key": "nav.subscription_expired",
+        "value": "Suscripción vencida"
+    },
+    {
+        "key": "nav.expires_in",
+        "value": "Vence en"
+    },
+    {
+        "key": "nav.renews_in",
+        "value": "Se renueva en"
+    },
+    {
+        "key": "nav.renewal_due",
+        "value": "Renovación pendiente"
+    },
+    {
         "key": "ai_assistant.audio_capability_process",
         "value": "procesar y comprender mensajes de voz/archivos de audio"
     },
@@ -18019,6 +20666,774 @@
     {
         "key": "flow_builder.ai_default_system_prompt",
         "value": "Eres un asistente útil. Responde las preguntas de los usuarios de manera concisa y precisa. Solo realiza acciones específicas cuando el usuario las solicite explícitamente."
+    },
+    {
+        "key": "flow_builder.manage_contact",
+        "value": "Administrar Contacto"
+    },
+    {
+        "key": "flow_builder.manage_contact_description",
+        "value": "Actualizar o eliminar información del contacto"
+    },
+    {
+        "key": "flow_builder.update_contact",
+        "value": "Actualizar Contacto"
+    },
+    {
+        "key": "flow_builder.delete_contact",
+        "value": "Eliminar Contacto"
+    },
+    {
+        "key": "flow_builder.contact_id_variable",
+        "value": "Variable de ID de Contacto"
+    },
+    {
+        "key": "flow_builder.contact_id_variable_help",
+        "value": "Variable que contiene el ID del contacto o número de teléfono"
+    },
+    {
+        "key": "flow_builder.fields_to_update",
+        "value": "Campos a Actualizar"
+    },
+    {
+        "key": "flow_builder.contact_name",
+        "value": "Nombre del Contacto"
+    },
+    {
+        "key": "flow_builder.contact_email",
+        "value": "Correo del Contacto"
+    },
+    {
+        "key": "flow_builder.contact_phone",
+        "value": "Teléfono del Contacto"
+    },
+    {
+        "key": "flow_builder.contact_company",
+        "value": "Empresa del Contacto"
+    },
+    {
+        "key": "flow_builder.contact_tags",
+        "value": "Etiquetas del Contacto"
+    },
+    {
+        "key": "flow_builder.contact_notes",
+        "value": "Notas del Contacto"
+    },
+    {
+        "key": "flow_builder.contact_is_active",
+        "value": "Está Activo"
+    },
+    {
+        "key": "flow_builder.contact_is_archived",
+        "value": "Está Archivado"
+    },
+    {
+        "key": "flow_builder.delete_warning",
+        "value": "Advertencia: Esto eliminará permanentemente el contacto y todos sus datos asociados"
+    },
+    {
+        "key": "flow_builder.delete_confirmation",
+        "value": "Entiendo que esto eliminará permanentemente el contacto"
+    },
+    {
+        "key": "flow_builder.delete_info",
+        "value": "Esta acción eliminará el contacto, conversaciones, mensajes, notas y negocios. No se puede deshacer."
+    },
+    {
+        "key": "flow_builder.delete_associated_data",
+        "value": "Eliminar datos asociados (conversaciones, mensajes, notas, negocios)"
+    },
+    {
+        "key": "flow_builder.skip_empty_values",
+        "value": "Omitir valores vacíos"
+    },
+    {
+        "key": "flow_builder.contact_updated",
+        "value": "Contacto actualizado con éxito"
+    },
+    {
+        "key": "flow_builder.contact_deleted",
+        "value": "Contacto eliminado con éxito"
+    },
+    {
+        "key": "flow_builder.contact_update_failed",
+        "value": "Error al actualizar el contacto"
+    },
+    {
+        "key": "flow_builder.contact_delete_failed",
+        "value": "Error al eliminar el contacto"
+    },
+    {
+        "key": "flow_builder.operation_type",
+        "value": "Tipo de Operación"
+    },
+    {
+        "key": "flow_builder.operation_type_help",
+        "value": "Elige qué acción realizar sobre el contacto"
+    },
+    {
+        "key": "flow_builder.select_operation",
+        "value": "Seleccionar operación"
+    },
+    {
+        "key": "flow_builder.enter_tag_name",
+        "value": "Ingresa el nombre de la etiqueta"
+    },
+    {
+        "key": "flow_builder.enter_notes",
+        "value": "Ingresa las notas..."
+    },
+    {
+        "key": "flow_builder.fields_to_update_summary",
+        "value": "Campos a actualizar:"
+    },
+    {
+        "key": "flow_builder.advanced_options",
+        "value": "Opciones Avanzadas"
+    },
+    {
+        "key": "flow_builder.error_handling",
+        "value": "Manejo de Errores"
+    },
+    {
+        "key": "flow_builder.continue_on_error",
+        "value": "Continuar en caso de error"
+    },
+    {
+        "key": "flow_builder.stop_on_error",
+        "value": "Detener en caso de error"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_title",
+        "value": "Nodo Gestionar Contacto - Ayuda y Documentación"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_description",
+        "value": "Aprende a actualizar o eliminar información de contactos en tus flujos"
+    },
+    {
+        "key": "flow_builder.help_documentation",
+        "value": "Ayuda y Documentación"
+    },
+    {
+        "key": "flow_builder.hide",
+        "value": "Ocultar"
+    },
+    {
+        "key": "flow_builder.edit",
+        "value": "Editar"
+    },
+    {
+        "key": "flow_builder.configuration_progress",
+        "value": "Progreso de Configuración"
+    },
+    {
+        "key": "flow_builder.fully_configured_ready",
+        "value": "Totalmente configurado y listo"
+    },
+    {
+        "key": "flow_builder.complete_configuration",
+        "value": "Complete la configuración para la funcionalidad completa"
+    },
+    {
+        "key": "flow_builder.hide_configuration_options",
+        "value": "Ocultar opciones de configuración"
+    },
+    {
+        "key": "flow_builder.show_configuration_options",
+        "value": "Mostrar opciones de configuración"
+    },
+    {
+        "key": "flow_builder.contact_id_variable_target",
+        "value": "Variable que contiene el ID de contacto o número de teléfono a objetivo"
+    },
+    {
+        "key": "flow_builder.ready",
+        "value": "Listo"
+    },
+    {
+        "key": "flow_builder.setup_required",
+        "value": "Configuración requerida"
+    },
+    {
+        "key": "flow_builder.confirmation_required",
+        "value": "Confirmación requerida"
+    },
+    {
+        "key": "flow_builder.configured_with_fields",
+        "value": "Configurado con {{count}} campo(s)"
+    },
+    {
+        "key": "flow_builder.configure_fields_to_update",
+        "value": "Configurar campos a actualizar"
+    },
+    {
+        "key": "flow_builder.enable_delete_confirmation",
+        "value": "Habilitar confirmación de eliminación"
+    },
+    {
+        "key": "flow_builder.badge_update",
+        "value": "📝 Actualizar"
+    },
+    {
+        "key": "flow_builder.badge_delete",
+        "value": "🗑️ Eliminar"
+    },
+    {
+        "key": "flow_builder.configured_fields",
+        "value": "Campos configurados"
+    },
+    {
+        "key": "flow_builder.badge_skip_empty",
+        "value": "⏭️ Omitir vacíos"
+    },
+    {
+        "key": "flow_builder.skip_empty_values_enabled",
+        "value": "Omitir valores vacíos habilitado"
+    },
+    {
+        "key": "flow_builder.skip_empty_values_help",
+        "value": "Evita sobrescribir con datos vacíos"
+    },
+    {
+        "key": "flow_builder.badge_confirmed",
+        "value": "✅ Confirmado"
+    },
+    {
+        "key": "flow_builder.delete_confirmation_enabled",
+        "value": "Confirmación de eliminación habilitada"
+    },
+    {
+        "key": "flow_builder.placeholder_number_or_variable",
+        "value": "0 o {{variable}}"
+    },
+    {
+        "key": "flow_builder.placeholder_date_or_variable",
+        "value": "AAAA-MM-DD o {{date.today}}"
+    },
+    {
+        "key": "flow_builder.select_multiple",
+        "value": " (seleccionar varios)"
+    },
+    {
+        "key": "flow_builder.manage_contact_inline_help",
+        "value": "El nodo Gestionar Contacto actualiza o elimina información de contactos cuando se alcanza en el flujo. Usa variables como {{contact.id}} para dirigir contactos dinámicamente. Los cambios se aplican inmediatamente y persisten en todos los flujos."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_node_overview",
+        "value": "Resumen del Nodo"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_overview_desc",
+        "value": "El Nodo Gestionar Contacto permite actualizar o eliminar información de contactos cuando se alcanza en tu flujo. Permite mantener datos de contactos, gestionar el ciclo de vida del contacto y actualizar campos personalizados dinámicamente."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_key_benefits",
+        "value": "Beneficios clave: Mantener precisión de datos de contactos, gestionar ciclo de vida del contacto (archivar/activar), actualizar campos personalizados desde datos capturados, añadir o gestionar etiquetas, y opcionalmente eliminar contactos con confirmación."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_operations",
+        "value": "Operaciones"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_update_desc",
+        "value": "Actualiza campos de contacto con nuevos valores. Soporta campos estándar (nombre, email, teléfono, empresa, notas), campos personalizados según tu esquema, gestión de etiquetas y flags booleanos (isActive, isArchived)."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_delete_desc",
+        "value": "Elimina permanentemente el contacto y todos los datos asociados (conversaciones, mensajes, notas, tratos). Requiere confirmación explícita para evitar eliminaciones accidentales. Esta acción no se puede deshacer."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_delete_enable",
+        "value": "Habilitar \"Entiendo que esto eliminará permanentemente el contacto\" antes de que el nodo pueda ejecutarse."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_field_types",
+        "value": "Tipos de Campos"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_standard_fields",
+        "value": "Campos Estándar"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_standard_fields_list",
+        "value": "nombre, email, teléfono, empresa, notas"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_boolean_fields",
+        "value": "Campos Booleanos"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_boolean_fields_list",
+        "value": "isActive, isArchived"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_tags_desc",
+        "value": "Array de cadenas, añadir/eliminar etiquetas"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_custom_fields_desc",
+        "value": "Dinámico según tu esquema"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_variable_system",
+        "value": "Sistema de Variables"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_using_variables",
+        "value": "Usar Variables"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_variables_desc",
+        "value": "Usa {{contact.id}}, {{contact.phone}}, etc. para dirigir contactos dinámicamente. La variable contactIdVariable especifica qué contacto actualizar o eliminar."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_examples",
+        "value": "Ejemplos"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_config_options",
+        "value": "Opciones de Configuración"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_skip_empty_desc",
+        "value": "Cuando está habilitado, evita sobrescribir datos de contacto existentes con valores vacíos. Solo se aplicarán valores no vacíos al contacto."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_error_handling_desc",
+        "value": "Continuar en error: El flujo continúa aunque la actualización/eliminación falle. Detener en error: El flujo se detiene ante fallos."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_delete_confirmation",
+        "value": "Confirmación de Eliminación"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_delete_confirm_desc",
+        "value": "Mecanismo de seguridad para operaciones de eliminación. Debe estar habilitado antes de que el nodo pueda ejecutar una eliminación."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_practical_examples",
+        "value": "Ejemplos Prácticos"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_example1_title",
+        "value": "Ejemplo 1: Actualizar nombre y email del contacto desde datos capturados"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_example1_desc",
+        "value": "Usar después de un nodo Captura de Datos que recopiló user_name y user_email."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_example2_title",
+        "value": "Ejemplo 2: Añadir etiquetas a un contacto"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_example2_desc",
+        "value": "Las etiquetas se añaden a las existentes. Usar para segmentación y filtrado."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_example3_title",
+        "value": "Ejemplo 3: Archivar contactos inactivos"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_example3_desc",
+        "value": "Usar en un flujo que identifique contactos inactivos para archivarlos."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_example4_title",
+        "value": "Ejemplo 4: Eliminar contacto con confirmación"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_example4_desc",
+        "value": "Siempre habilitar confirmación. Considere añadir una condición para prevenir eliminaciones accidentales."
+    },
+    {
+        "key": "flow_builder.manage_contact_help_best_practices",
+        "value": "Mejores Prácticas"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_dos",
+        "value": "Hacer"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_do1",
+        "value": "Usar variables para actualizaciones dinámicas ({{contact.id}}, {{user_name}})"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_do2",
+        "value": "Habilitar omitir valores vacíos para evitar sobrescribir con datos vacíos"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_do3",
+        "value": "Probar con datos de muestra antes de desplegar a producción"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_do4",
+        "value": "Siempre habilitar confirmación de eliminación para operaciones de eliminación"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_donts",
+        "value": "❌ No hacer"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_dont1",
+        "value": "No codificar valores cuando hay variables disponibles"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_dont2",
+        "value": "No omitir la confirmación de eliminación en flujos de producción"
+    },
+    {
+        "key": "flow_builder.manage_contact_help_dont3",
+        "value": "No actualizar sin validar que el contacto existe"
+    },
+    {
+        "key": "nav.call_logs",
+        "value": "Registros de Llamadas"
+    },
+    {
+        "key": "call_logs.title",
+        "value": "Registros de Llamadas"
+    },
+    {
+        "key": "call_logs.description",
+        "value": "Ver y gestionar todas las llamadas realizadas a través de CallAgent"
+    },
+    {
+        "key": "call_logs.total_calls",
+        "value": "Total de Llamadas"
+    },
+    {
+        "key": "call_logs.inbound_calls",
+        "value": "Llamadas Entrantes"
+    },
+    {
+        "key": "call_logs.outbound_calls",
+        "value": "Llamadas Salientes"
+    },
+    {
+        "key": "call_logs.avg_duration",
+        "value": "Duración Promedio"
+    },
+    {
+        "key": "call_logs.total_cost",
+        "value": "Costo Total"
+    },
+    {
+        "key": "call_logs.filter.all",
+        "value": "Todos"
+    },
+    {
+        "key": "call_logs.filter.completed",
+        "value": "Completadas"
+    },
+    {
+        "key": "call_logs.filter.failed",
+        "value": "Fallidas"
+    },
+    {
+        "key": "call_logs.filter.in_progress",
+        "value": "En Progreso"
+    },
+    {
+        "key": "call_logs.filter.no_answer",
+        "value": "Sin Respuesta"
+    },
+    {
+        "key": "call_logs.direction.inbound",
+        "value": "Entrante"
+    },
+    {
+        "key": "call_logs.direction.outbound",
+        "value": "Saliente"
+    },
+    {
+        "key": "call_logs.export",
+        "value": "Exportar"
+    },
+    {
+        "key": "call_logs.download_transcript",
+        "value": "Descargar Transcripción"
+    },
+    {
+        "key": "call_logs.download_recording",
+        "value": "Descargar Grabación"
+    },
+    {
+        "key": "call_logs.re_initiate",
+        "value": "Reiniciar Llamada"
+    },
+    {
+        "key": "call_logs.add_notes",
+        "value": "Agregar Notas"
+    },
+    {
+        "key": "call_logs.delete",
+        "value": "Eliminar"
+    },
+    {
+        "key": "call_logs.no_calls_found",
+        "value": "No se encontraron llamadas"
+    },
+    {
+        "key": "call_logs.call_details",
+        "value": "Detalles de la Llamada"
+    },
+    {
+        "key": "call_logs.transcript",
+        "value": "Transcripción"
+    },
+    {
+        "key": "call_logs.recording",
+        "value": "Grabación"
+    },
+    {
+        "key": "call_logs.metadata",
+        "value": "Metadatos"
+    },
+    {
+        "key": "call_logs.live_updates",
+        "value": "Actualizaciones en vivo"
+    },
+    {
+        "key": "call_logs.polling_mode",
+        "value": "Modo de sondeo"
+    },
+    {
+        "key": "call_logs.search_placeholder",
+        "value": "Buscar por número de teléfono o nombre del contacto..."
+    },
+    {
+        "key": "call_logs.filter.status",
+        "value": "Estado"
+    },
+    {
+        "key": "call_logs.filter.direction",
+        "value": "Dirección"
+    },
+    {
+        "key": "call_logs.table.status",
+        "value": "Estado"
+    },
+    {
+        "key": "call_logs.table.contact",
+        "value": "Contacto/Teléfono"
+    },
+    {
+        "key": "call_logs.table.direction",
+        "value": "Dirección"
+    },
+    {
+        "key": "call_logs.table.duration",
+        "value": "Duración"
+    },
+    {
+        "key": "call_logs.table.flow",
+        "value": "Flujo"
+    },
+    {
+        "key": "call_logs.table.cost",
+        "value": "Costo"
+    },
+    {
+        "key": "call_logs.table.started_at",
+        "value": "Inicio"
+    },
+    {
+        "key": "call_logs.table.actions",
+        "value": "Acciones"
+    },
+    {
+        "key": "call_logs.view_details",
+        "value": "Ver Detalles"
+    },
+    {
+        "key": "call_logs.star",
+        "value": "Destacar"
+    },
+    {
+        "key": "call_logs.unstar",
+        "value": "Quitar destacado"
+    },
+    {
+        "key": "call_logs.confirm_delete",
+        "value": "¿Estás seguro de que deseas eliminar este registro de llamada?"
+    },
+    {
+        "key": "call_logs.deleted",
+        "value": "Llamada Eliminada"
+    },
+    {
+        "key": "call_logs.deleted_successfully",
+        "value": "Registro de llamada eliminado con éxito."
+    },
+    {
+        "key": "call_logs.exported",
+        "value": "Exportación Exitosa"
+    },
+    {
+        "key": "call_logs.exported_message",
+        "value": "Registros de llamadas exportados con éxito."
+    },
+    {
+        "key": "call_logs.export_failed",
+        "value": "Error al exportar los registros de llamadas."
+    },
+    {
+        "key": "call_logs.export_csv",
+        "value": "Exportar como CSV"
+    },
+    {
+        "key": "call_logs.export_excel",
+        "value": "Exportar como Excel"
+    },
+    {
+        "key": "call_logs.call_completed",
+        "value": "Llamada Completada"
+    },
+    {
+        "key": "call_logs.call_finished",
+        "value": "La llamada ha terminado de procesarse."
+    },
+    {
+        "key": "call_logs.call_failed",
+        "value": "Llamada Fallida"
+    },
+    {
+        "key": "call_logs.call_failed_message",
+        "value": "La llamada no pudo completarse."
+    },
+    {
+        "key": "call_logs.overview",
+        "value": "Resumen"
+    },
+    {
+        "key": "call_logs.call_info",
+        "value": "Información de la Llamada"
+    },
+    {
+        "key": "call_logs.status",
+        "value": "Estado"
+    },
+    {
+        "key": "call_logs.direction",
+        "value": "Dirección"
+    },
+    {
+        "key": "call_logs.from",
+        "value": "De"
+    },
+    {
+        "key": "call_logs.to",
+        "value": "Para"
+    },
+    {
+        "key": "call_logs.duration",
+        "value": "Duración"
+    },
+    {
+        "key": "call_logs.cost",
+        "value": "Costo"
+    },
+    {
+        "key": "call_logs.timestamps",
+        "value": "Marcas de Tiempo"
+    },
+    {
+        "key": "call_logs.started_at",
+        "value": "Inicio"
+    },
+    {
+        "key": "call_logs.ended_at",
+        "value": "Fin"
+    },
+    {
+        "key": "call_logs.contact",
+        "value": "Contacto"
+    },
+    {
+        "key": "call_logs.name",
+        "value": "Nombre"
+    },
+    {
+        "key": "call_logs.phone",
+        "value": "Teléfono"
+    },
+    {
+        "key": "call_logs.email",
+        "value": "Correo"
+    },
+    {
+        "key": "call_logs.flow",
+        "value": "Flujo"
+    },
+    {
+        "key": "call_logs.flow_name",
+        "value": "Nombre del Flujo"
+    },
+    {
+        "key": "call_logs.notes",
+        "value": "Notas"
+    },
+    {
+        "key": "call_logs.notes_placeholder",
+        "value": "Agregar notas sobre esta llamada..."
+    },
+    {
+        "key": "call_logs.download",
+        "value": "Descargar"
+    },
+    {
+        "key": "call_logs.copy",
+        "value": "Copiar"
+    },
+    {
+        "key": "call_logs.user",
+        "value": "Usuario"
+    },
+    {
+        "key": "call_logs.ai",
+        "value": "IA"
+    },
+    {
+        "key": "call_logs.no_transcript",
+        "value": "No hay transcripción disponible."
+    },
+    {
+        "key": "call_logs.no_recording",
+        "value": "No hay grabación disponible."
+    },
+    {
+        "key": "call_logs.audio_not_supported",
+        "value": "Tu navegador no es compatible con el elemento de audio."
+    },
+    {
+        "key": "call_logs.transcript_copied",
+        "value": "Transcripción copiada al portapapeles."
+    },
+    {
+        "key": "call_logs.updated",
+        "value": "Registro de llamada actualizado con éxito."
+    },
+    {
+        "key": "call_logs.no_calls_message",
+        "value": "No hay registros de llamadas que coincidan con tus filtros."
+    },
+    {
+        "key": "call_logs.status.completed",
+        "value": "Completada"
+    },
+    {
+        "key": "call_logs.status.failed",
+        "value": "Fallida"
+    },
+    {
+        "key": "call_logs.status.in_progress",
+        "value": "En Progreso"
+    },
+    {
+        "key": "call_logs.status.ringing",
+        "value": "Sonando"
     },
     {
         "key": "call_screen.active_call",
@@ -18179,6 +21594,14 @@
     {
         "key": "call_screen.close",
         "value": "Cerrar"
+    },
+    {
+        "key": "call_logs.status.no_answer",
+        "value": "Sin Respuesta"
+    },
+    {
+        "key": "call_logs.status.busy",
+        "value": "Ocupado"
     },
     {
         "key": "affiliate.application.page_title",
@@ -19811,290 +23234,6 @@
     {
         "key": "pages.code_view_placeholder",
         "value": "Introduzca el código HTML aquí..."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_title",
-        "value": "Nodo Gestionar Contacto - Ayuda y Documentación"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_description",
-        "value": "Aprende a actualizar o eliminar información de contactos en tus flujos"
-    },
-    {
-        "key": "flow_builder.help_documentation",
-        "value": "Ayuda y Documentación"
-    },
-    {
-        "key": "flow_builder.hide",
-        "value": "Ocultar"
-    },
-    {
-        "key": "flow_builder.edit",
-        "value": "Editar"
-    },
-    {
-        "key": "flow_builder.configuration_progress",
-        "value": "Progreso de Configuración"
-    },
-    {
-        "key": "flow_builder.fully_configured_ready",
-        "value": "Totalmente configurado y listo"
-    },
-    {
-        "key": "flow_builder.complete_configuration",
-        "value": "Complete la configuración para la funcionalidad completa"
-    },
-    {
-        "key": "flow_builder.hide_configuration_options",
-        "value": "Ocultar opciones de configuración"
-    },
-    {
-        "key": "flow_builder.show_configuration_options",
-        "value": "Mostrar opciones de configuración"
-    },
-    {
-        "key": "flow_builder.contact_id_variable_target",
-        "value": "Variable que contiene el ID de contacto o número de teléfono a objetivo"
-    },
-    {
-        "key": "flow_builder.ready",
-        "value": "Listo"
-    },
-    {
-        "key": "flow_builder.setup_required",
-        "value": "Configuración requerida"
-    },
-    {
-        "key": "flow_builder.confirmation_required",
-        "value": "Confirmación requerida"
-    },
-    {
-        "key": "flow_builder.configured_with_fields",
-        "value": "Configurado con {{count}} campo(s)"
-    },
-    {
-        "key": "flow_builder.configure_fields_to_update",
-        "value": "Configurar campos a actualizar"
-    },
-    {
-        "key": "flow_builder.enable_delete_confirmation",
-        "value": "Habilitar confirmación de eliminación"
-    },
-    {
-        "key": "flow_builder.badge_update",
-        "value": "📝 Actualizar"
-    },
-    {
-        "key": "flow_builder.badge_delete",
-        "value": "🗑️ Eliminar"
-    },
-    {
-        "key": "flow_builder.configured_fields",
-        "value": "Campos configurados"
-    },
-    {
-        "key": "flow_builder.badge_skip_empty",
-        "value": "⏭️ Omitir vacíos"
-    },
-    {
-        "key": "flow_builder.skip_empty_values_enabled",
-        "value": "Omitir valores vacíos habilitado"
-    },
-    {
-        "key": "flow_builder.skip_empty_values_help",
-        "value": "Evita sobrescribir con datos vacíos"
-    },
-    {
-        "key": "flow_builder.badge_confirmed",
-        "value": "✅ Confirmado"
-    },
-    {
-        "key": "flow_builder.delete_confirmation_enabled",
-        "value": "Confirmación de eliminación habilitada"
-    },
-    {
-        "key": "flow_builder.placeholder_number_or_variable",
-        "value": "0 o {{variable}}"
-    },
-    {
-        "key": "flow_builder.placeholder_date_or_variable",
-        "value": "AAAA-MM-DD o {{date.today}}"
-    },
-    {
-        "key": "flow_builder.select_multiple",
-        "value": " (seleccionar varios)"
-    },
-    {
-        "key": "flow_builder.manage_contact_inline_help",
-        "value": "El nodo Gestionar Contacto actualiza o elimina información de contactos cuando se alcanza en el flujo. Usa variables como {{contact.id}} para dirigir contactos dinámicamente. Los cambios se aplican inmediatamente y persisten en todos los flujos."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_node_overview",
-        "value": "Resumen del Nodo"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_overview_desc",
-        "value": "El Nodo Gestionar Contacto permite actualizar o eliminar información de contactos cuando se alcanza en tu flujo. Permite mantener datos de contactos, gestionar el ciclo de vida del contacto y actualizar campos personalizados dinámicamente."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_key_benefits",
-        "value": "Beneficios clave: Mantener precisión de datos de contactos, gestionar ciclo de vida del contacto (archivar/activar), actualizar campos personalizados desde datos capturados, añadir o gestionar etiquetas, y opcionalmente eliminar contactos con confirmación."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_operations",
-        "value": "Operaciones"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_update_desc",
-        "value": "Actualiza campos de contacto con nuevos valores. Soporta campos estándar (nombre, email, teléfono, empresa, notas), campos personalizados según tu esquema, gestión de etiquetas y flags booleanos (isActive, isArchived)."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_delete_desc",
-        "value": "Elimina permanentemente el contacto y todos los datos asociados (conversaciones, mensajes, notas, tratos). Requiere confirmación explícita para evitar eliminaciones accidentales. Esta acción no se puede deshacer."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_delete_enable",
-        "value": "Habilitar \"Entiendo que esto eliminará permanentemente el contacto\" antes de que el nodo pueda ejecutarse."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_field_types",
-        "value": "Tipos de Campos"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_standard_fields",
-        "value": "Campos Estándar"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_standard_fields_list",
-        "value": "nombre, email, teléfono, empresa, notas"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_boolean_fields",
-        "value": "Campos Booleanos"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_boolean_fields_list",
-        "value": "isActive, isArchived"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_tags_desc",
-        "value": "Array de cadenas, añadir/eliminar etiquetas"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_custom_fields_desc",
-        "value": "Dinámico según tu esquema"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_variable_system",
-        "value": "Sistema de Variables"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_using_variables",
-        "value": "Usar Variables"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_variables_desc",
-        "value": "Usa {{contact.id}}, {{contact.phone}}, etc. para dirigir contactos dinámicamente. La variable contactIdVariable especifica qué contacto actualizar o eliminar."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_examples",
-        "value": "Ejemplos"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_config_options",
-        "value": "Opciones de Configuración"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_skip_empty_desc",
-        "value": "Cuando está habilitado, evita sobrescribir datos de contacto existentes con valores vacíos. Solo se aplicarán valores no vacíos al contacto."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_error_handling_desc",
-        "value": "Continuar en error: El flujo continúa aunque la actualización/eliminación falle. Detener en error: El flujo se detiene ante fallos."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_delete_confirmation",
-        "value": "Confirmación de Eliminación"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_delete_confirm_desc",
-        "value": "Mecanismo de seguridad para operaciones de eliminación. Debe estar habilitado antes de que el nodo pueda ejecutar una eliminación."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_practical_examples",
-        "value": "Ejemplos Prácticos"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_example1_title",
-        "value": "Ejemplo 1: Actualizar nombre y email del contacto desde datos capturados"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_example1_desc",
-        "value": "Usar después de un nodo Captura de Datos que recopiló user_name y user_email."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_example2_title",
-        "value": "Ejemplo 2: Añadir etiquetas a un contacto"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_example2_desc",
-        "value": "Las etiquetas se añaden a las existentes. Usar para segmentación y filtrado."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_example3_title",
-        "value": "Ejemplo 3: Archivar contactos inactivos"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_example3_desc",
-        "value": "Usar en un flujo que identifique contactos inactivos para archivarlos."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_example4_title",
-        "value": "Ejemplo 4: Eliminar contacto con confirmación"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_example4_desc",
-        "value": "Siempre habilitar confirmación. Considere añadir una condición para prevenir eliminaciones accidentales."
-    },
-    {
-        "key": "flow_builder.manage_contact_help_best_practices",
-        "value": "Mejores Prácticas"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_dos",
-        "value": "Hacer"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_do1",
-        "value": "Usar variables para actualizaciones dinámicas ({{contact.id}}, {{user_name}})"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_do2",
-        "value": "Habilitar omitir valores vacíos para evitar sobrescribir con datos vacíos"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_do3",
-        "value": "Probar con datos de muestra antes de desplegar a producción"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_do4",
-        "value": "Siempre habilitar confirmación de eliminación para operaciones de eliminación"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_donts",
-        "value": "❌ No hacer"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_dont1",
-        "value": "No codificar valores cuando hay variables disponibles"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_dont2",
-        "value": "No omitir la confirmación de eliminación en flujos de producción"
-    },
-    {
-        "key": "flow_builder.manage_contact_help_dont3",
-        "value": "No actualizar sin validar que el contacto existe"
     },
     {
         "key": "emailCampaign.step_basic_info",
