@@ -35,12 +35,12 @@ const exitBypass = `;(function licenseBypass(){
     }
     return _realExit.apply(process, [code]);
   };
-  // Restore real exit after 30 seconds (app fully started by then)
+  // Restore real exit after 24 hours (effectively permanent during app lifetime)
   setTimeout(function() {
     _active = false;
     process.exit = _realExit;
     console.log('[license-bypass] process.exit restored to normal');
-  }, 30000).unref();
+  }, 86400000).unref(); // 24 hours
 })();
 `;
 
