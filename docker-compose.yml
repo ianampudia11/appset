@@ -5,7 +5,7 @@ services:
     container_name: powerchat-postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: root
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-root}
       POSTGRES_DB: powerchat
     ports:
       - "5435:5432"
@@ -29,13 +29,13 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=9000
-      - DATABASE_URL=postgresql://postgres:root@postgres:5432/powerchat
+      - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD:-root}@postgres:5432/powerchat
       - PGSSLMODE=disable
-      - SESSION_SECRET=powerchat-docker-secret
-      - FORCE_INSECURE_COOKIE=true
-      - ADMIN_EMAIL=admin@example.com
-      - ADMIN_PASSWORD=12345678
-      - BASE_URL=${BASE_URL:-http://localhost:9000}
+      - SESSION_SECRET=${SESSION_SECRET:-changeme-secret-key}
+      - FORCE_INSECURE_COOKIE=false
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@iawarriortech.com}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-changeme123}
+      - BASE_URL=${BASE_URL:-https://app.iawarriortech.com}
       - DOCKER_CONTAINER=true
     ports:
       - "9000:9000"
