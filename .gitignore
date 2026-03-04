@@ -10,3 +10,4 @@ data/wa-version.json
 .env
 .env.*
 cookies.txt
+.claude/
