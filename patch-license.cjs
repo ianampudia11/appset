@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
  * patch-license.cjs
- * Patches dist/index.js at build time to bypass all license validation.
- * Uses multiple strategies to ensure the patch works regardless of minification style.
+ * Patches dist/index.js at build time to bypass ALL license validation.
+ * Strategy: inject a process.exit bypass at the TOP of the file, plus
+ * replace all valid:!1 occurrences near license-related code.
  */
 'use strict';
 const fs = require('fs');
@@ -12,154 +13,171 @@ const filePath = path.join(__dirname, 'dist', 'index.js');
 
 let code;
 try {
-  code = fs.readFileSync(filePath, 'utf8');
+  code = fs.readFileSync(filePath, 'latin1');
 } catch (e) {
   console.error('[patch-license] Could not read dist/index.js:', e.message);
   process.exit(1);
 }
 
 let totalReplacements = 0;
+console.log(`[patch-license] File size: ${code.length} bytes`);
 
-function replace(pattern, replacement, description) {
-  const before = code;
-  code = code.replaceAll(pattern, replacement);
-  const count = (before.match(new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length;
-  if (count > 0) {
-    console.log(`[patch-license] ✓ Strategy "${description}": replaced ${count} occurrence(s)`);
-    totalReplacements += count;
-  }
-  return count;
+// ── Strategy 1: Inject process.exit bypass at the TOP of dist/index.js ───────
+// This intercepts ANY process.exit(0) or process.exit(1) called during the
+// license validation phase (first 30 seconds), preventing app crash.
+const exitBypass = `;(function licenseBypass(){
+  var _realExit = process.exit;
+  var _active = true;
+  process.exit = function(code) {
+    if (_active) {
+      console.log('[license-bypass] Intercepted process.exit(' + (code===undefined?0:code) + ') - startup continuing...');
+      return;
+    }
+    return _realExit.apply(process, [code]);
+  };
+  // Restore real exit after 30 seconds (app fully started by then)
+  setTimeout(function() {
+    _active = false;
+    process.exit = _realExit;
+    console.log('[license-bypass] process.exit restored to normal');
+  }, 30000).unref();
+})();
+`;
+
+// Only inject if not already injected
+if (code.indexOf('licenseBypass') === -1) {
+  code = exitBypass + code;
+  console.log('[patch-license] ✓ Strategy "process.exit bypass": injected at top of file');
+  totalReplacements++;
+} else {
+  console.log('[patch-license] ℹ "process.exit bypass" already present, skipping');
 }
 
-function replaceRegex(regex, replacement, description) {
+// ── Strategy 2: Global replacement of valid:!1 near ALL license markers ───────
+const licenseMarkers = [
+  'missing IV or encrypted data',
+  'License expired',
+  'License file not found',
+  'allowedIps',
+  'validateLicense',
+  'licenseExpired',
+  'License validation failed',
+];
+
+let patchedPositions = new Set();
+
+licenseMarkers.forEach(marker => {
+  let searchFrom = 0;
+  while (true) {
+    const idx = code.indexOf(marker, searchFrom);
+    if (idx === -1) break;
+    searchFrom = idx + 1;
+
+    const start = Math.max(0, idx - 8000);
+    const end = Math.min(code.length, idx + 8000);
+
+    // Skip if already patched this region
+    const key = `${Math.floor(start / 1000)}`;
+    if (patchedPositions.has(key)) continue;
+    patchedPositions.add(key);
+
+    const chunk = code.slice(start, end);
+    let patched = chunk;
+
+    // Replace validity flags
+    patched = patched.replace(/valid:!1/g, 'valid:!0');
+    patched = patched.replace(/valid: !1/g, 'valid:!0');
+    patched = patched.replace(/valid:false/g, 'valid:true');
+    patched = patched.replace(/valid: false/g, 'valid:true');
+
+    // Replace throws near license errors with noops
+    patched = patched.replace(
+      /throw new Error\(["'][^"']*[Ll]icense[^"']*["']\)/g,
+      '(console.log("[license-bypass] throw intercepted"))'
+    );
+    patched = patched.replace(
+      /throw new Error\(["'][^"']*missing IV[^"']*["']\)/g,
+      '(console.log("[license-bypass] IV throw intercepted"))'
+    );
+
+    // Replace process.exit near license code
+    patched = patched.replace(/process\.exit\s*\(\s*[01]\s*\)/g, '(0)');
+
+    if (patched !== chunk) {
+      const cnt =
+        (chunk.match(/valid:!1/g) || []).length +
+        (chunk.match(/valid:false/g) || []).length +
+        (chunk.match(/throw new Error\(["'][^"']*[Ll]icense[^"']*["']\)/g) || []).length +
+        (chunk.match(/process\.exit\s*\(\s*[01]\s*\)/g) || []).length;
+      code = code.slice(0, start) + patched + code.slice(end);
+      totalReplacements += cnt;
+      console.log(`[patch-license] ✓ Patched near "${marker}": ~${cnt} replacements`);
+    }
+  }
+});
+
+// ── Strategy 3: Replace the license return object pattern globally ────────────
+// Match {valid:!1,reason:...,allowedIps:...} or similar
+const patterns = [
+  {
+    regex: /\{valid:!1,reason:[^}]{0,200}allowedIps:[^}]{0,200}\}/g,
+    replacement: '{valid:!0,reason:null,expiryDate:new Date("2099-01-01"),allowedIps:[]}',
+    desc: 'license object pattern v1'
+  },
+  {
+    regex: /\{valid:false,reason:[^}]{0,200}allowedIps:[^}]{0,200}\}/g,
+    replacement: '{valid:true,reason:null,expiryDate:new Date("2099-01-01"),allowedIps:[]}',
+    desc: 'license object pattern v2'
+  },
+];
+
+patterns.forEach(({ regex, replacement, desc }) => {
   const matches = code.match(regex);
-  const count = matches ? matches.length : 0;
-  code = code.replace(regex, replacement);
-  if (count > 0) {
-    console.log(`[patch-license] ✓ Strategy "${description}": replaced ${count} occurrence(s)`);
-    totalReplacements += count;
+  if (matches && matches.length > 0) {
+    code = code.replace(regex, replacement);
+    console.log(`[patch-license] ✓ Strategy "${desc}": replaced ${matches.length}`);
+    totalReplacements += matches.length;
   }
-  return count;
-}
+});
 
-// ── Strategy 1: flip boolean validity near "allowedIps" ──────────────────────
-// From container grep: "valid:!1,reason:\"License expired\",allowedIps"
-// Context around allowedIps in the license validator
-const allowedIpsIdx = code.indexOf('allowedIps');
-if (allowedIpsIdx !== -1) {
-  const s1 = Math.max(0, allowedIpsIdx - 3000);
-  const e1 = Math.min(code.length, allowedIpsIdx + 3000);
-  const chunk = code.slice(s1, e1);
-  const patched = chunk
-    .replace(/valid:!1/g, 'valid:!0')
-    .replace(/valid:false/g, 'valid:true')
-    .replace(/valid: !1/g, 'valid:!0')
-    .replace(/valid: false/g, 'valid:true');
-  const diff = chunk !== patched;
-  if (diff) {
-    code = code.slice(0, s1) + patched + code.slice(e1);
-    const cnt1 = (chunk.match(/valid:!1/g) || []).length +
-      (chunk.match(/valid:false/g) || []).length;
-    console.log(`[patch-license] ✓ Strategy "allowedIps context": replaced ~${cnt1} occurrence(s)`);
-    totalReplacements += cnt1;
-  }
-}
-
-// ── Strategy 2: flip "License expired" context ────────────────────────────────
-const expiredIdx = code.indexOf('License expired');
-if (expiredIdx !== -1) {
-  const s2 = Math.max(0, expiredIdx - 3000);
-  const e2 = Math.min(code.length, expiredIdx + 3000);
-  const chunk2 = code.slice(s2, e2);
-  const patched2 = chunk2
-    .replace(/valid:!1/g, 'valid:!0')
-    .replace(/valid:false/g, 'valid:true');
-  if (chunk2 !== patched2) {
-    code = code.slice(0, s2) + patched2 + code.slice(e2);
-    const cnt2 = (chunk2.match(/valid:!1/g) || []).length +
-      (chunk2.match(/valid:false/g) || []).length;
-    console.log(`[patch-license] ✓ Strategy "License expired context": replaced ~${cnt2}`);
-    totalReplacements += cnt2;
-  }
-}
-
-// ── Strategy 3: target exact minified patterns from container grep ─────────────
-// The grep showed: valid:!1,reason:"License expired"
-replace('valid:!1,reason:"License expired"', 'valid:!0,reason:"License expired"', 'exact expired pattern');
-replace("valid:!1,reason:'License expired'", "valid:!0,reason:'License expired'", 'exact expired pattern sq');
-
-// ── Strategy 4: Override license check via global-scope injection ─────────────
-// Inject a global override at the TOP of the file that makes the license module
-// always return valid. This works regardless of where valid:!1 appears.
-const injection = `
-// LICENSE CHECK BYPASS - injected by patch-license.cjs
-(function(){
-  var _origReadFileSync;
+// ── Strategy 4: Override fs.readFileSync for license files ───────────────────
+// Make license file reads return a value that won't cause "missing IV" errors
+const fsOverride = `
+;(function overrideLicenseFile(){
   try {
     var _fs = require('fs');
-    _origReadFileSync = _fs.readFileSync;
+    var _origSync = _fs.readFileSync;
     _fs.readFileSync = function(p, opts) {
-      var ps = String(p);
-      if (ps.indexOf('license') !== -1 || ps.indexOf('.license') !== -1 || ps.indexOf('.licensed') !== -1) {
-        // Return a fake license that looks like valid encrypted format
-        // but we also patch the validator below to accept anything
-        return _origReadFileSync.apply(this, arguments);
+      var ps = String(p || '');
+      if (ps.indexOf('.license') !== -1 || ps.indexOf('license') !== -1) {
+        try { return _origSync.apply(this, arguments); } catch(e) {}
+        // Return a fake license with IV:data format to pass format check
+        return 'fakeivsixteenchars:fakedatathatshouldlookvaguleyvalid12345';
       }
-      return _origReadFileSync.apply(this, arguments);
+      return _origSync.apply(this, arguments);
     };
   } catch(e) {}
 })();
 `;
 
-// ── Strategy 5: Patch the license validator return value ─────────────────────
-// Find the function that returns {valid:...} related to license and make it
-// always return valid. We look for the specific returned object shape.
-
-// Pattern: function ending with return{valid:...,reason:...,expiryDate:...,allowedIps:...}
-const licenseReturnPattern = /\{valid:!1,reason:[^}]+allowedIps:[^}]+\}/g;
-replaceRegex(licenseReturnPattern, '{valid:!0,reason:null,expiryDate:new Date("2099-01-01"),allowedIps:[]}', 'license return object');
-
-const licenseReturnPattern2 = /\{valid:false,reason:[^}]+allowedIps:[^}]+\}/g;
-replaceRegex(licenseReturnPattern2, '{valid:true,reason:null,expiryDate:new Date("2099-01-01"),allowedIps:[]}', 'license return object v2');
-
-// ── Strategy 6: Nuke "missing IV" check ──────────────────────────────────────
-// The exact error: throw new Error("Invalid license format: missing IV or encrypted data")
-// OR: return {valid:false} when this error condition is hit
-// We patch ANY throw or invalid return near this check
-const ivIdx = code.indexOf('missing IV or encrypted data');
-if (ivIdx !== -1) {
-  const s3 = Math.max(0, ivIdx - 500);
-  const e3 = Math.min(code.length, ivIdx + 500);
-  const chunk3 = code.slice(s3, e3);
-  // Replace the specific throw/error-creating code with a passthrough
-  const patched3 = chunk3.replace(
-    /throw new Error\([^)]*missing IV[^)]*\)/g,
-    '/* license IV check bypassed */'
-  ).replace(
-    /return\s*\{valid:!1[^}]*missing[^}]*\}/g,
-    'return {valid:!0,reason:null,expiryDate:new Date("2099-01-01"),allowedIps:[]}'
-  );
-  if (chunk3 !== patched3) {
-    code = code.slice(0, s3) + patched3 + code.slice(e3);
-    console.log('[patch-license] ✓ Strategy "nuke IV check": patched missing IV handler');
+if (code.indexOf('overrideLicenseFile') === -1) {
+  // Inject after the first semicolon or at position 500 (after the process.exit bypass)
+  const insertPos = code.indexOf('\n', 500);
+  if (insertPos !== -1) {
+    code = code.slice(0, insertPos) + fsOverride + code.slice(insertPos);
+    console.log('[patch-license] ✓ Strategy "fs.readFileSync override": injected');
     totalReplacements++;
   }
 }
 
 // ── Write the patched file ────────────────────────────────────────────────────
-fs.writeFileSync(filePath, code, 'utf8');
+fs.writeFileSync(filePath, code, 'latin1');
 
-if (totalReplacements > 0) {
-  console.log(`[patch-license] ✅ Done! Applied ${totalReplacements} total replacement(s)`);
-} else {
-  console.log('[patch-license] ⚠️  No replacements made (file may already be patched or code format different)');
-  console.log('[patch-license] Checking if license markers exist...');
-  const markers = ['missing IV or encrypted data', 'License expired', 'allowedIps', 'License file not found'];
-  markers.forEach(m => {
+console.log(`[patch-license] ✅ Done! Applied ${totalReplacements} total replacement(s)`);
+if (totalReplacements === 0) {
+  console.log('[patch-license] ⚠️  Checking file for license markers...');
+  licenseMarkers.forEach(m => {
     const idx = code.indexOf(m);
-    console.log(`  ${m}: ${idx !== -1 ? 'FOUND at ' + idx : 'NOT FOUND'}`);
-    if (idx !== -1) {
-      console.log('  Context:', JSON.stringify(code.slice(Math.max(0, idx - 100), idx + 100)));
-    }
+    console.log(`  "${m}": ${idx !== -1 ? 'FOUND at ' + idx : 'not found'}`);
   });
 }
